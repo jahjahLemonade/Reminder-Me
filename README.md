@@ -13,8 +13,6 @@ time, not letting you or your friends miss out on the
 important things in life.
 
 
-![Reminder](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quickanddirtytips.com%2Fproductivity%2Ftime-management%2Fusing-location-based-and-future-reminders&psig=AOvVaw2UWgpXDiTIQtDIUhyclX6a&ust=1600796895076000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiV66vn-usCFQAAAAAdAAAAABAD)
-
 
 
 
