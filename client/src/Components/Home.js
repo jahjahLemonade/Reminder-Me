@@ -47,6 +47,8 @@ const Home = () => {
 
   useEffect(() => {
     M.AutoInit();
+    let input = document.getElementById("message");
+    M.CharacterCounter.init(input);
   }, []);
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const Home = () => {
       setReminderList(list);
     });
     return unsubscribe;
-  });
+  }, []);
 
   return (
     <div>
@@ -129,13 +131,11 @@ const Home = () => {
             </select>
             <label id="frequency">Frequency</label>
           </div>
-        </div>
-        <div className="row">
           <div className="input-field col s5">
             <textarea
               id="message"
               className="materialize-textarea"
-              data-length="150"
+              data-length="50"
             ></textarea>
             <label id="message" htmlFor="message">
               Remind me to...
@@ -157,11 +157,11 @@ const Home = () => {
             <button className="cross" onClick={handleClick}>
               X
             </button>
-            <li>{e.name}</li>
-            <li>{e.phoneNumber}</li>
-            <li>{e.date}</li>
-            <li>{e.time}</li>
-            <li>{e.timezone}</li>
+            <li>Receiver: {e.name}</li>
+            <li>Phone Number: {e.phoneNumber}</li>
+            <li>Date Created: {e.date}</li>
+            <li>Arrival Time: {e.time}</li>
+            <li>Receiver's TZ: {e.timezone}</li>
             <li>Freq: {e.frequency}</li>
             <li>Message: {e.message}</li>
           </div>

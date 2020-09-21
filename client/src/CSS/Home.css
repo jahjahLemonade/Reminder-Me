@@ -11,7 +11,7 @@ textarea#message {
    margin-top: 10px;
    border-radius: 12px;
    border: 1px solid black;
-   width: 500px;
+  margin-left: 100px; 
    
 }
 textarea#message:focus {
@@ -136,7 +136,6 @@ input#phone_number.validate:focus {
    border: 1px solid black;
    font-size: 18px;
    width: 200px;
-   margin-left: 125px;
 }
 div#timezone .select-wrapper input.select-dropdown{
    background-color: white;
@@ -155,10 +154,11 @@ div#timezone .select-wrapper input.select-dropdown{
 label#timezone {
    margin-left: 100px;
 }
-label#frequency {
-   margin-left: 125px;
-}
 select#frequency {
    margin-left: 440px;
 }
+label#message {
+   margin-left: 100px;
+}
+
 
