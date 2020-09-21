@@ -1,0 +1,22 @@
+input#loginEmail.validate {
+    background-color: white;
+    margin-top: 100px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-size: 20px;
+  }
+  input#loginEmail.validate:focus {
+    border: 3px solid green;
+  }
+input#loginPassword.validate {
+    background-color: #ffffff;
+    margin-top: 10px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+input#loginPassword.validate:focus {
+    border: 3px solid green;
+}

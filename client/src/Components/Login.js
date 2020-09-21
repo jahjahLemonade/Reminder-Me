@@ -2,13 +2,14 @@ import React, { useCallback, useContext } from 'react'
 import { withRouter, Redirect } from 'react-router'
 import firebase from './firebase.js'
 import { AuthContext } from "./Auth.js"
+import "../CSS/Login.css"
 
 const Login = ({ history }) => {
     const handleLogin = useCallback(async event => {
         event.preventDefault()
-        const { email, password } = event.target.elements
+        const { loginEmail, loginPassword } = event.target.elements
         try {
-            await firebase.auth().signInWithEmailAndPassword(email.value, password.value)
+            await firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value)
             history.push("/")
         } catch(err) {
             alert(err)
@@ -23,18 +24,18 @@ const Login = ({ history }) => {
         <form id="login" className='col s12' onSubmit={handleLogin}>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='email' type='email' className='validate'/>
-                    <label htmlFor="email">Email</label>
+                    <input id='loginEmail' type='email' className='validate'/>
+                    <label htmlFor="loginEmail">Email</label>
                 </div> 
             </div>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='password' type='password' className='validate'/>
-                    <label htmlFor="password">Password</label>
+                    <input id='loginPassword' type='password' className='validate'/>
+                    <label htmlFor="loginPassword">Password</label>
                 </div>
             </div>
             <div style={{textAlign: "center"}}>
-                    <button style={{ backgroundColor: "#056674"}} className="waves-effect waves-light btn-large">Login</button>
+                    <button style={{ backgroundColor: "#056674"}} className="waves-effect btn-large">Login</button>
                 </div>
         </form>
     </div>

@@ -13,7 +13,7 @@ const About = () => {
   }
   return (
     <div className="about-page">
-      <Navbar tabs={aboutPageTabs} />
+      <Navbar tabs={aboutPageTabs}/>
       <div className="about-this-app">
         <h6 className="about-this-app-header">About This Application</h6>
         <p className="description">

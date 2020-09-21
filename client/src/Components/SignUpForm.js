@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import firebase from "./firebase.js";
-import "../CSS/index.css";
+import firebase from "./firebase.js"
+import "../CSS/SignUpForm.css"
 
 const SignUpForm = ({ history }) => {
   const handleSignUp = useCallback(
@@ -22,35 +22,35 @@ const SignUpForm = ({ history }) => {
 
   return (
     <div className="row">
-      <form  id="signup" className="col s12" onSubmit={handleSignUp}>
+      <form className="col s12" onSubmit={handleSignUp}>
         <div className="row">
           <div className="input-field col s6">
-            <input id="first_name" type="text" className="validate" />
+            <input id="signup-first_name" type="text" className="validate" />
             <label htmlFor="first_name">First Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="last_name" type="text" className="validate" />
+            <input id="signup-last_name" type="text" className="validate" />
             <label htmlFor="last_name">Last Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="email" type="email" className="validate" />
+            <input id="signup-email" type="email" className="validate" />
             <label htmlFor="email">Email</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="password" type="password" className="validate" />
+            <input id="signup-password" type="password" className="validate" />
             <label htmlFor="password">Password</label>
           </div>
         </div>
         <div style={{ textAlign: "center" }}>
           <button
             style={{ backgroundColor: "#056674" }}
-            className="waves-effect waves-light btn-large"
+            className="waves-effect btn-large"
           >
             Sign Up
           </button>

@@ -1,0 +1,42 @@
+input#signup-first_name.validate {
+  background-color: #ffffff;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+input#signup-first_name.validate:focus {
+  border: 3px solid green;
+}
+input#signup-last_name.validate {
+  background-color: #ffffff;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+input#signup-last_name.validate:focus {
+  border: 3px solid green;
+}
+input#signup-email.validate {
+  background-color: white;
+  margin-top: 100px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+input#signup-email.validate:focus {
+  border: 3px solid green;
+}
+input#signup-password.validate {
+  background-color: #ffffff;
+  margin-top: 10px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+input#signup-password.validate:focus {
+  border: 3px solid green;
+}
