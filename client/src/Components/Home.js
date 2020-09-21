@@ -105,9 +105,9 @@ const Home = () => {
               Time
             </label>
           </div>
-          <div className="input-field col s2">
-            <select id="timezone">
-              <option disabled>Choose timezone</option>
+          <div id="timezone" className="input-field col s2">
+            <select id="timezone" defaultValue="Choose Timezone...">
+              <option disabled>Choose Timezone...</option>
               <option value="US/Eastern">US/Eastern</option>
               <option value="US/Central">US/Central</option>
               <option value="US/Mountain">US/Mountain</option>
@@ -118,10 +118,10 @@ const Home = () => {
             <label id="timezone">Timezone</label>
           </div>
         </div>
-        <div className="row">
+        <div id="freq" className="row">
           <div className="input-field col s2">
-            <select id="frequency">
-              <option disabled>Choose Frequency</option>
+            <select id="frequency" defaultValue="Choose Frequency...">
+              <option disabled>Choose Frequency...</option>
               <option value="Once">Once</option>
               <option value="Daily">Daily</option>
               <option value="Monthly">Monthly</option>

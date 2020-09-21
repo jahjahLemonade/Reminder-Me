@@ -4,7 +4,7 @@ input#loginEmail.validate {
     margin-top: 10px;
     border-radius: 12px;
     border: 1px solid black;
-    font-size: 20px;
+    font-size: 18px;
   }
   input#loginEmail.validate:focus {
     border: 3px solid green;
@@ -15,7 +15,7 @@ input#loginPassword.validate {
     margin-top: 10px;
     border-radius: 12px;
     border: 1px solid black;
-    font-size: 20px;
+    font-size: 18px;
 }
 input#loginPassword.validate:focus {
     border: 3px solid green;
