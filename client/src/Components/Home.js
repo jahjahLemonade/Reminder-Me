@@ -157,13 +157,13 @@ const Home = () => {
             <button className="cross" onClick={handleClick}>
               X
             </button>
-            <li>Receiver: {e.name}</li>
-            <li>Phone Number: {e.phoneNumber}</li>
-            <li>Date Created: {e.date}</li>
-            <li>Arrival Time: {e.time}</li>
-            <li>Receiver's TZ: {e.timezone}</li>
-            <li>Freq: {e.frequency}</li>
-            <li>Message: {e.message}</li>
+            <li id="name">Receiver: {e.name}</li>
+            <br /><li id="phoneNum">Phone Number: {e.phoneNumber}</li>
+            <br /><li id="dateCreated">Date Created: {e.date}</li>
+            <li id="arrivalTime">Arrival Time: {e.time}</li>
+            <br /><li id="tz">Receiver's TZ: {e.timezone}</li>
+            <br /><li id="freq">Freq: {e.frequency}</li>
+            <li id="sms">Message: {e.message}</li>
           </div>
         ))}
       </ul>

@@ -160,5 +160,15 @@ select#frequency {
 label#message {
    margin-left: 100px;
 }
-
-
+li {
+   display: inline;
+}
+li#arrivalTime {
+   float: right
+}
+li#freq {
+   float: right
+}
+li#tz {
+   float: right
+}
