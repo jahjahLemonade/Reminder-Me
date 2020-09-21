@@ -1,0 +1,44 @@
+div.input-field.col.s2 {
+   float: left;
+   margin-left: 60px;
+}
+div.input-field.col.s5 {
+   float: left;
+   margin-left: 60px;
+}
+textarea#message {
+   background-color: #ffffff;
+   margin-top: 10px;
+   border-radius: 12px;
+   border: 1px solid black;
+   width: 500px;
+   
+}
+textarea#message:focus {
+   border: 3px solid green;
+   
+}
+.reminders {
+   float: right;
+}
+ul {
+   margin-right: 100px;
+}
+.cross {
+   float: right;
+   margin-left: 20px;
+}
+form#home {
+   display: inline-block;
+}
+div.scheduledReminder {
+   display: inline-block;
+   border:1px solid #000;
+   padding:20px;
+   margin-top: 20px;
+   margin-right: 30px;
+   background-color:white;
+}
+svg.caret {
+   display: none;
+}

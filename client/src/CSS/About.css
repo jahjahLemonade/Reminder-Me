@@ -1,0 +1,56 @@
+h6 {
+    font-weight: bold;
+    color: #056674;
+}
+
+.about-this-app {
+    float: left;
+}
+.btn-flat {
+    color: black;
+}
+
+.about-this-app-header {
+    margin-top: 100px;
+    margin-left: 230px;
+    font-size: 24px;
+}
+.description {
+    margin-top: 20px;
+    margin-left: 135px;
+    font-size: 18px;
+}
+.tech-stack-header{
+    margin-top: 25px;
+    margin-left: 280px;
+    font-size: 24px;
+}
+.tech-stack {
+    font-weight: normal;
+    margin-left: 135px;
+    font-size: 20px;
+}
+.link-to {
+    font-weight: normal;
+    margin-left: 135px;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.clock {
+    width: 440px;
+    height: 320px;
+    float: right;
+    margin-top: 180px;
+    margin-right: 220px;
+}
+.tech {
+    display: inline;
+    vertical-align: top;
+    color: black;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+
+
