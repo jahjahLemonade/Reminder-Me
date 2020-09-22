@@ -175,3 +175,7 @@ li#tz {
 li#sms {
    width: 300px;
 }
+input.invalid[type=text]:not(.browser-default) {
+   box-shadow: 3px 3px 3px 3px red; 
+}
+

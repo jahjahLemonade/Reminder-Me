@@ -45,7 +45,7 @@ const About = () => {
         <h6 className="link-to">
           Link to:
           <a
-            href="https://github.com/jspades93?tab=repositories"
+            href="https://github.com/jspades93/Reminder-Me"
             target="_blank4"
             rel="noopener noreferrer"
             className="waves-effect waves-light btn-flat"

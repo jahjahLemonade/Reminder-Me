@@ -40,3 +40,12 @@ input#signup-password.validate {
 input#signup-password.validate:focus {
   border: 3px solid green;
 }
+input.invalid[type=text]:not(.browser-default) {
+  box-shadow: 3px 3px 3px 3px red; 
+}
+input.invalid[type=email]:not(.browser-default) {
+  box-shadow: 3px 3px 3px 3px red; 
+}
+input.invalid[type=password]:not(.browser-default) {
+  box-shadow: 3px 3px 3px 3px red; 
+}
