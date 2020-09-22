@@ -24,18 +24,18 @@ const Login = ({ history }) => {
         <form id="login" className='col s12' onSubmit={handleLogin}>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='loginEmail' type='email' className='validate'/>
+                    <input id='loginEmail' type='email' className='validate' required/>
                     <label htmlFor="loginEmail">Email</label>
                 </div> 
             </div>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='loginPassword' type='password' className='validate'/>
+                    <input id='loginPassword' type='password' className='validate' required/>
                     <label htmlFor="loginPassword">Password</label>
                 </div>
             </div>
             <div style={{textAlign: "center"}}>
-                    <button style={{ backgroundColor: "#056674"}} className="waves-effect btn-large">Login</button>
+                    <button style={{ backgroundColor: "#056674"}} className="waves-effect waves-light btn-large">Login</button>
                 </div>
         </form>
     </div>

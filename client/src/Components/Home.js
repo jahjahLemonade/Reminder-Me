@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/Home.css";
-import M from "materialize-css";
 import Navbar from "./Navbar";
 import Rotate from "./Rotate";
 import firebase from "./firebase";
+import M from 'materialize-css';
 
 const Home = () => {
   const [reminderList, setReminderList] = useState([]);
@@ -32,12 +32,7 @@ const Home = () => {
         message: message.value,
         timezone: timezone.value,
       });
-    first_name.value = "";
-    last_name.value = "";
-    phone_number.value = "";
-    time.value = "";
-    date.value = "";
-    message.value = "";
+      document.getElementById("home").reset();
   };
 
   const handleClick = (e) => {
@@ -74,13 +69,13 @@ const Home = () => {
         <Rotate style={{ marginLeft: "255px" }} />
         <div className="row">
           <div className="input-field col s2">
-            <input id="first_name" type="text" className="validate" />
+            <input id="first_name" type="text" className="validate" required />
             <label id="first_name" htmlFor="first_name">
               First Name
             </label>
           </div>
           <div className="input-field col s2">
-            <input id="last_name" type="text" className="validate" />
+            <input id="last_name" type="text" className="validate" required />
             <label id="last_name" htmlFor="last_name">
               Last Name
             </label>
@@ -88,13 +83,13 @@ const Home = () => {
         </div>
         <div className="row">
           <div className="input-field col s2">
-            <input id="phone_number" type="text" className="validate" />
+            <input id="phone_number" type="text" className="validate" required />
             <label id="phone_number" htmlFor="phone_number">
               Phone Number
             </label>
           </div>
           <div className="input-field col s2">
-            <input id="date" type="text" className="datepicker" />
+            <input id="date" type="text" className="datepicker" required />
             <label id="date" htmlFor="date">
               Date
             </label>
@@ -102,14 +97,14 @@ const Home = () => {
         </div>
         <div className="row">
           <div className="input-field col s2">
-            <input id="time" type="text" className="timepicker" />
+            <input id="time" type="text" className="timepicker" required />
             <label id="time" htmlFor="time">
               Time
             </label>
           </div>
           <div id="timezone" className="input-field col s2">
-            <select id="timezone" defaultValue="Choose Timezone...">
-              <option disabled>Choose Timezone...</option>
+            <select id="timezone" defaultValue="Choose Timezone..." required> 
+              <option value="">Choose Timezone...</option>
               <option value="US/Eastern">US/Eastern</option>
               <option value="US/Central">US/Central</option>
               <option value="US/Mountain">US/Mountain</option>
@@ -122,8 +117,8 @@ const Home = () => {
         </div>
         <div id="freq" className="row">
           <div className="input-field col s2">
-            <select id="frequency" defaultValue="Choose Frequency...">
-              <option disabled>Choose Frequency...</option>
+            <select id="frequency" defaultValue="Choose Frequency..." required>
+              <option value="">Choose Frequency...</option>
               <option value="Once">Once</option>
               <option value="Daily">Daily</option>
               <option value="Monthly">Monthly</option>
@@ -136,6 +131,7 @@ const Home = () => {
               id="message"
               className="materialize-textarea"
               data-length="50"
+              required
             ></textarea>
             <label id="message" htmlFor="message">
               Remind me to...
@@ -145,7 +141,7 @@ const Home = () => {
         <div style={{ marginLeft: "230px" }}>
           <button
             style={{ backgroundColor: "#056674", marginBottom:"20px" }}
-            className="waves-effect btn-large"
+            className="waves-effect waves-light btn-large"
           >
             Create
           </button>

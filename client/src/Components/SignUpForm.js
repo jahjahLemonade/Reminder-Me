@@ -25,32 +25,32 @@ const SignUpForm = ({ history }) => {
       <form className="col s12" onSubmit={handleSignUp}>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-first_name" type="text" className="validate" />
+            <input id="signup-first_name" type="text" className="validate" required/>
             <label htmlFor="first_name">First Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-last_name" type="text" className="validate" />
+            <input id="signup-last_name" type="text" className="validate" required/>
             <label htmlFor="last_name">Last Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-email" type="email" className="validate" />
+            <input id="signup-email" type="email" className="validate" required />
             <label htmlFor="email">Email</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-password" type="password" className="validate" />
+            <input id="signup-password" type="password" className="validate" required/>
             <label htmlFor="password">Password</label>
           </div>
         </div>
         <div style={{ textAlign: "center" }}>
           <button
             style={{ backgroundColor: "#056674" }}
-            className="waves-effect btn-large"
+            className="waves-effect waves-light btn-large"
           >
             Sign Up
           </button>

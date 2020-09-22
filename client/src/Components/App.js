@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment} from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Rotate from "./Rotate";
@@ -8,7 +8,6 @@ import Login from "./Login";
 import Home from "./Home";
 import { AuthProvider } from "./Auth";
 import PrivateRoute  from "./PrivateRoute";
-
 
 const App = () => {
   return (
