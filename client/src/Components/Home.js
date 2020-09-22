@@ -65,7 +65,7 @@ const Home = () => {
       setReminderList(list);
     });
     return unsubscribe;
-  }, []);
+  });
 
   return (
     <div>
@@ -158,11 +158,14 @@ const Home = () => {
               X
             </button>
             <li id="name">Receiver: {e.name}</li>
-            <br /><li id="phoneNum">Phone Number: {e.phoneNumber}</li>
-            <br /><li id="dateCreated">Date Created: {e.date}</li>
             <li id="arrivalTime">Arrival Time: {e.time}</li>
-            <br /><li id="tz">Receiver's TZ: {e.timezone}</li>
-            <br /><li id="freq">Freq: {e.frequency}</li>
+            <br />
+            <li id="phoneNum">Phone #: {e.phoneNumber}</li>
+            <li id="tz">Receiver's TZ: {e.timezone}</li>
+            <br />
+            <li id="dateCreated">Date Created: {e.date}</li>
+            <li id="freq">Repeat: {e.frequency}</li>
+            <br />
             <li id="sms">Message: {e.message}</li>
           </div>
         ))}

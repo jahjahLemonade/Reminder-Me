@@ -5,7 +5,7 @@ const client = twilio(
 
 const cronJob = require('cron').CronJob;
 
-const MessagingResponse = twilio.twiml.MessagingResponse;
+//const MessagingResponse = twilio.twiml.MessagingResponse;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -79,7 +79,7 @@ const setReminderFrequency = (freq, date, id) => {
     return ['*', monthOfTheYear, '*']
   }
 }
-
+new cronJob('* * * * *', () => {
   const fetchData = async () => {
     const numbers = [];
     const data = await db.collection('reminders').get()
@@ -100,11 +100,11 @@ const setReminderFrequency = (freq, date, id) => {
           client.messages.create(
             {
               to: reminder.phoneNumber,
-              from: "4104691056",
+              from: "4104691056",//Why "Reminder Me" id dont work?
               body: reminder.message,
             },
             (err, message) => {
-              console.log(message.body);
+              console.log(message.body, err);
             }
           );
         },
@@ -114,6 +114,7 @@ const setReminderFrequency = (freq, date, id) => {
     }
   }
   fetchData()
+}, null, true)
   
 // app.post('/message', function (req, res) {
 //     var resp = new MessagingResponse();

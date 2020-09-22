@@ -32,7 +32,6 @@ form#home {
    display: inline-block;
 }
 div.scheduledReminder {
-   display: inline-block;
    border:1px solid #000;
    padding:20px;
    margin-top: 20px;
@@ -161,7 +160,8 @@ label#message {
    margin-left: 100px;
 }
 li {
-   display: inline;
+   display: inline-block;
+   width: 200px;
 }
 li#arrivalTime {
    float: right
@@ -171,4 +171,7 @@ li#freq {
 }
 li#tz {
    float: right
+}
+li#sms {
+   width: 300px;
 }
