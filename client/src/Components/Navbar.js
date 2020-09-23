@@ -5,6 +5,7 @@ import { Link, Redirect} from "react-router-dom";
 import { auth } from "firebase/app";
 import { AuthContext } from "./Auth.js";
 
+//Home page flashes when logging out on About page
 const Navbar = ({ tabs }) => {
   const { currUser } = useContext(AuthContext);
   const handleLogout = async (e) => {
