@@ -1,12 +1,18 @@
 import React, { useContext } from "react";
 import "../CSS/Navbar.css";
 import bell from "../bell.png";
-import { Link } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 import { auth } from "firebase/app";
 import { AuthContext } from "./Auth.js";
 
 const Navbar = ({ tabs }) => {
   const { currUser } = useContext(AuthContext);
+  const handleLogout = async (e) => {
+    if(e.target.innerText === "Logout") {
+      await auth().signOut()
+    }
+    return <Redirect to="/Login" />
+  }
   return (
     <nav>
       <div className="nav-wrapper">
@@ -19,13 +25,12 @@ const Navbar = ({ tabs }) => {
             currUser ? (
               <li
                 key={e}
-                onClick={(e) =>
-                  e.target.innerText === "Logout" ? auth().signOut() : ""
-                }
+                onClick={handleLogout}
               >
                 <Link
                   value={e}
-                  to={e === "UserInfo" ? "/" : e === "Logout" ? "/Login" : "/"}
+                  className={e}
+                  to={e === "Logout" ? "/Login" : "/"}
                 >
                   {e}
                 </Link>
@@ -33,12 +38,14 @@ const Navbar = ({ tabs }) => {
             ) : (
               <li
                 key={e}
+                className={e}
                 onClick={(e) =>
                   e.target.innerText === "Logout" ? auth().signOut() : ""
                 }
               >
                 <Link
                   value={e}
+                  className={e}
                   to={
                     e === "Login"
                       ? "/Login"

@@ -93,7 +93,7 @@ new cronJob('* * * * *', () => {
         reminder.frequency,
         reminder.date,
         reminder.id
-      );;
+      );
       var textJob = new cronJob(
         `${minute} ${hour} ${frequency[0]} ${frequency[1]} ${frequency[2]}`,
         () => {
@@ -104,7 +104,7 @@ new cronJob('* * * * *', () => {
               body: reminder.message,
             },
             (err, message) => {
-              console.log(message.body, err);
+              console.log(message.body, err)
             }
           );
         },

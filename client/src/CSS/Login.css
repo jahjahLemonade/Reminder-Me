@@ -1,4 +1,4 @@
-input#loginEmail.validate {
+input#login_email.validate {
     background-color: white;
     margin-top: 100px;
     margin-top: 10px;
@@ -6,10 +6,10 @@ input#loginEmail.validate {
     border: 1px solid black;
     font-size: 18px;
   }
-  input#loginEmail.validate:focus {
+  input#login_email.validate:focus {
     border: 3px solid green;
   }
-input#loginPassword.validate {
+input#login_password.validate {
     background-color: #ffffff;
     margin-top: 10px;
     margin-top: 10px;
@@ -17,7 +17,7 @@ input#loginPassword.validate {
     border: 1px solid black;
     font-size: 18px;
 }
-input#loginPassword.validate:focus {
+input#login_password.validate:focus {
     border: 3px solid green;
 }
 input.invalid[type=email]:not(.browser-default) {

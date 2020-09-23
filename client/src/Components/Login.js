@@ -7,9 +7,9 @@ import "../CSS/Login.css"
 const Login = ({ history }) => {
     const handleLogin = useCallback(async event => {
         event.preventDefault()
-        const { loginEmail, loginPassword } = event.target.elements
+        const { login_email, login_password } = event.target.elements
         try {
-            await firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value)
+            await firebase.auth().signInWithEmailAndPassword(login_email.value, login_password.value)
             history.push("/")
         } catch(err) {
             alert(err)
@@ -24,14 +24,14 @@ const Login = ({ history }) => {
         <form id="login" className='col s12' onSubmit={handleLogin}>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='loginEmail' type='email' className='validate' required/>
-                    <label htmlFor="loginEmail">Email</label>
+                    <input id='login_email' type='email' className='validate' autoComplete="on" required/>
+                    <label htmlFor="login_email">Email</label>
                 </div> 
             </div>
             <div className='row'>
                 <div className='input-field col s6'>
-                    <input id='loginPassword' type='password' className='validate' required/>
-                    <label htmlFor="loginPassword">Password</label>
+                    <input id='login_password' type='password' className='validate' autoComplete="on" required/>
+                    <label htmlFor="login_password">Password</label>
                 </div>
             </div>
             <div style={{textAlign: "center"}}>

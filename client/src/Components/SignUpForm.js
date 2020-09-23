@@ -25,25 +25,25 @@ const SignUpForm = ({ history }) => {
       <form className="col s12" onSubmit={handleSignUp}>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-first_name" type="text" className="validate" required/>
+            <input id="signup-first_name" type="text" className="validate" autoComplete="on" required/>
             <label htmlFor="signup-first_name">First Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-last_name" type="text" className="validate" required/>
+            <input id="signup-last_name" type="text" className="validate" autoComplete="on" required/>
             <label htmlFor="signup-last_name">Last Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-email" type="email" className="validate" required />
+            <input id="signup-email" type="email" className="validate" autoComplete="on" required />
             <label htmlFor="signup-email">Email</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-password" type="password" className="validate" required/>
+            <input id="signup-password" type="password" className="validate" autoComplete="on" required/>
             <label htmlFor="signup-password">Password</label>
           </div>
         </div>

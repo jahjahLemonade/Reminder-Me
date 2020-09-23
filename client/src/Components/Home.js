@@ -41,12 +41,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    M.AutoInit();
-    let input = document.getElementById("message");
-    M.CharacterCounter.init(input);
-  }, []);
-
-  useEffect(() => {
     const db = firebase.firestore();
     const fetchData = async () => {
       const data = await db.collection("reminders").get();
@@ -61,6 +55,12 @@ const Home = () => {
     });
     return unsubscribe;
   });
+
+  useEffect(() => {
+    M.AutoInit();
+    let input = document.getElementById("message");
+    M.CharacterCounter.init(input);
+  }, []);
 
   return (
     <div>
