@@ -1,3 +1,4 @@
+require('dotenv').config()
 const twilio = require('twilio')
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
   
+console.log(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 const firebase = require("firebase/app");
 require("firebase/firestore");
 
@@ -104,7 +106,7 @@ new cronJob('* * * * *', () => {
               body: reminder.message,
             },
             (err, message) => {
-              console.log(message.body, err)
+              console.log(message, err)
             }
           );
         },
