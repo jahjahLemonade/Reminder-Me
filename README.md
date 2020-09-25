@@ -13,25 +13,24 @@ time, not letting you or your friends miss out on the
 important things in life.
 
 
+<h4></h4>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<br />
+<h4></h4>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 
-
-
-``` bash
-# Install dependencies for server
-npm install
-
-# Install dependencies for client
-npm run client-install
-
-# Run the client & server with concurrently
-npm run dev
-
-# Run the Express server only
-npm run server
-
-# Run the React client only
-npm run client
-
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-```
-
+<br />
+<br />
+<img src="https://www.quickanddirtytips.com/sites/default/files/images/11666/types-of-reminders.png" alt="pic" width="300" align="left">
+<br />
+<br />
+Link:
