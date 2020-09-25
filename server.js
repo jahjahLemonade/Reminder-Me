@@ -139,7 +139,7 @@ new cronJob('* * * * *', () => {
   
 //   });
 
-  var server = app.listen(3001, () => {
+  var server = app.listen(process.env.PORT || 3001, () => {
     console.log('Listening on port %d', server.address().port);
   });
 
