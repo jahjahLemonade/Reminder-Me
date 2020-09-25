@@ -1,8 +1,8 @@
-require('dotenv').config()
+require('dotenv').config() 
 const twilio = require('twilio')
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN)
+  process.env.TWILIO_AUTH_KEY)
 
 const cronJob = require('cron').CronJob;
 
@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
   
-console.log(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 const firebase = require("firebase/app");
 require("firebase/firestore");
 
@@ -106,7 +105,7 @@ new cronJob('* * * * *', () => {
               body: reminder.message,
             },
             (err, message) => {
-              console.log(message, err)
+              console.log(message.body, err)
             }
           );
         },
@@ -114,6 +113,7 @@ new cronJob('* * * * *', () => {
         true, reminder.timezone
       );
     }
+    
   }
   fetchData()
 }, null, true)
@@ -139,7 +139,7 @@ new cronJob('* * * * *', () => {
   
 //   });
 
-  var server = app.listen(3001, function() {
+  var server = app.listen(3001, () => {
     console.log('Listening on port %d', server.address().port);
   });
 
