@@ -22,7 +22,7 @@ const SignUpForm = ({ history }) => {
 
   return (
     <div className="row">
-      <form className="col s12"  onSubmit={handleSignUp}>
+      <form className="col s12" onSubmit={handleSignUp}>
         <div className="row">
           <div className="input-field col s6">
             <input id="signup_first_name" type="text" className="validate" autoComplete="on" required/>

@@ -31,7 +31,7 @@ const Navbar = ({ tabs }) => {
                 <Link
                   value={e}
                   className={e}
-                  to={e === "Logout" ? "/Login" : "/"}
+                  to={e === "Logout" ? "/Signup": "/"}
                 >
                   {e}
                 </Link>
@@ -40,9 +40,6 @@ const Navbar = ({ tabs }) => {
               <li
                 key={e}
                 className={e}
-                onClick={(e) =>
-                  e.target.innerText === "Logout" ? auth().signOut() : ""
-                }
               >
                 <Link
                   value={e}
