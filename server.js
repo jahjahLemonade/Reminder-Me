@@ -1,4 +1,5 @@
 require('dotenv').config() 
+const path = require('path');
 const twilio = require('twilio')
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -138,7 +139,12 @@ new cronJob('* * * * *', () => {
 //     res.end(resp.toString());
   
 //   });
+app.use(express.static(path.join(__dirname, 'build')));
 
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
   var server = app.listen(process.env.PORT || 3001, () => {
