@@ -7,11 +7,11 @@ const SignUpForm = ({ history }) => {
   const handleSignUp = useCallback(
     async (event) => {
       event.preventDefault();
-      const { email, password } = event.target.elements;
+      const { signup_email, signup_password } = event.target.elements;
       try {
         await firebase
           .auth()
-          .createUserWithEmailAndPassword(email.value, password.value);
+          .createUserWithEmailAndPassword(signup_email.value, signup_password.value);
         history.push("/")
       } catch (err) {
         alert(err);
@@ -22,29 +22,29 @@ const SignUpForm = ({ history }) => {
 
   return (
     <div className="row">
-      <form className="col s12" onSubmit={handleSignUp}>
+      <form className="col s12"  onSubmit={handleSignUp}>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-first_name" type="text" className="validate" autoComplete="on" required/>
-            <label htmlFor="signup-first_name">First Name</label>
+            <input id="signup_first_name" type="text" className="validate" autoComplete="on" required/>
+            <label htmlFor="signup_first_name">First Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-last_name" type="text" className="validate" autoComplete="on" required/>
-            <label htmlFor="signup-last_name">Last Name</label>
+            <input id="signup_last_name" type="text" className="validate" autoComplete="on" required/>
+            <label htmlFor="signup_last_name">Last Name</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-email" type="email" className="validate" autoComplete="on" required />
-            <label htmlFor="signup-email">Email</label>
+            <input id="signup_email" type="email" className="validate" autoComplete="on" required />
+            <label htmlFor="signup_email">Email</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <input id="signup-password" type="password" className="validate" autoComplete="on" required/>
-            <label htmlFor="signup-password">Password</label>
+            <input id="signup_password" type="password" className="validate" autoComplete="on" required/>
+            <label htmlFor="signup_password">Password</label>
           </div>
         </div>
         <div style={{ textAlign: "center" }}>

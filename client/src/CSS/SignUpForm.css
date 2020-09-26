@@ -1,24 +1,24 @@
-input#signup-first_name.validate {
+input#signup_first_name.validate {
   background-color: #ffffff;
   margin-top: 10px;
   border-radius: 12px;
   border: 1px solid black;
   font-size: 18px;
 }
-input#signup-first_name.validate:focus {
+input#signup_first_name.validate:focus {
   border: 3px solid green;
 }
-input#signup-last_name.validate {
+input#signup_last_name.validate {
   background-color: #ffffff;
   margin-top: 10px;
   border-radius: 12px;
   border: 1px solid black;
   font-size: 18px;
 }
-input#signup-last_name.validate:focus {
+input#signup_last_name.validate:focus {
   border: 3px solid green;
 }
-input#signup-email.validate {
+input#signup_email.validate {
   background-color: white;
   margin-top: 100px;
   margin-top: 10px;
@@ -26,10 +26,10 @@ input#signup-email.validate {
   border: 1px solid black;
   font-size: 18px;
 }
-input#signup-email.validate:focus {
+input#signup_email.validate:focus {
   border: 3px solid green;
 }
-input#signup-password.validate {
+input#signup_password.validate {
   background-color: #ffffff;
   margin-top: 10px;
   margin-top: 10px;
@@ -37,7 +37,7 @@ input#signup-password.validate {
   border: 1px solid black;
   font-size: 18px;
 }
-input#signup-password.validate:focus {
+input#signup_password.validate:focus {
   border: 3px solid green;
 }
 input.invalid[type=text]:not(.browser-default) {
