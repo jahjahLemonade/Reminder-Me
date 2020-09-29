@@ -14,7 +14,6 @@ important things in life.
 
 
 <h4>Issues I'm working on</h4>
-<li>Seperating user's reminders when logged in</li>
 <li>Fix multiple sms issue when reminder arrive</li>
 <li>Fix issue with "Once" reminders disappearing before arrival time</li>
 <br />
