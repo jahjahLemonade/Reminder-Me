@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../CSS/Home.css";
 import Navbar from "./Navbar";
 import Rotate from "./Rotate";
 import firebase from "./firebase";
 import M from 'materialize-css';
+import { AuthContext } from "./Auth.js";
 
 const Home = () => {
   const [reminderList, setReminderList] = useState([]);
+  const { currUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const Home = () => {
       date,
       frequency,
       message,
-      timezone,
+      timezone
     } = e.target.elements;
     firebase
       .firestore()
@@ -31,6 +33,7 @@ const Home = () => {
         frequency: frequency.value,
         message: message.value,
         timezone: timezone.value,
+        userEmail: currUser.email
       });
       document.getElementById("home").reset();
   };
@@ -43,7 +46,7 @@ const Home = () => {
   useEffect(() => {
     const db = firebase.firestore();
     const fetchData = async () => {
-      const data = await db.collection("reminders").get();
+      const data = await db.collection("reminders").where("userEmail", "==", currUser.email).get();
       setReminderList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     fetchData();
@@ -64,7 +67,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar tabs={["Logout"]} />
+      <Navbar tabs={["UserInfo", "Logout"]} />
       <form id="home"className="col s12" onSubmit={handleSubmit}>
         <Rotate style={{ marginLeft: "255px" }} />
         <div className="row">

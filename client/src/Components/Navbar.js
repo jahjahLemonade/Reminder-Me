@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../CSS/Navbar.css";
 import bell from "../bell.png";
-import { Link, Redirect} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { auth } from "firebase/app";
 import { AuthContext } from "./Auth.js";
 
@@ -9,10 +9,9 @@ import { AuthContext } from "./Auth.js";
 const Navbar = ({ tabs }) => {
   const { currUser } = useContext(AuthContext);
   const handleLogout = async (e) => {
-    if(e.target.innerText === "Logout") {
-      await auth().signOut()
-    }
-    return <Redirect to="/Login" />
+    if (e.target.innerText === "Logout") {
+      await auth().signOut();
+    } 
   }
   return (
     <nav>
@@ -31,7 +30,7 @@ const Navbar = ({ tabs }) => {
                 <Link
                   value={e}
                   className={e}
-                  to={e === "Logout" ? "/Signup": "/"}
+                  to={e === "Logout" ? "/Signup" : "/" }
                 >
                   {e}
                 </Link>
