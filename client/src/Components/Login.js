@@ -20,7 +20,7 @@ const Login = ({ history }) => {
     if(currUser) return <Redirect to="/" />
 
     return (
-        <div className='row'>
+        <div className='rows'>
         <form id="login" className='col s12' onSubmit={handleLogin}>
             <div className='row'>
                 <div className='input-field col s6'>

@@ -1,56 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+header {
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), 
+        url(../clock2.jpg);
+    background-size: auto;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0px;
+}
+.title p {
+    font-size: 2rem;
+}
+
 h6 {
     font-weight: bold;
     color: #056674;
 }
 
-.about-this-app {
-    float: left;
-}
 .btn-flat {
     color: black;
 }
-
+.header {
+    text-align: center;
+}
 .about-this-app-header {
-    margin-top: 100px;
-    margin-left: 230px;
-    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 130px;
+    transition: 0.2s;
 }
 .description {
     margin-top: 20px;
-    margin-left: 135px;
-    font-size: 18px;
+    font-size: 24px;
 }
 .tech-stack-header{
-    margin-top: 25px;
-    margin-left: 280px;
-    font-size: 24px;
+    margin-top: 15px;
+    font-size: 130px;
+    display: flex;
+    justify-content: center; 
+    transition: 0.2s;
 }
 .tech-stack {
     font-weight: normal;
-    margin-left: 135px;
-    font-size: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
 .link-to {
     font-weight: normal;
-    margin-left: 135px;
     margin-top: 20px;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
 }
-.clock {
-    width: 440px;
-    height: 320px;
-    float: right;
-    margin-top: 180px;
-    margin-right: 220px;
-}
+
 .tech {
-    display: inline;
-    vertical-align: top;
     color: black;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 24px;
+}
+.about-app {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
+@media only screen and (max-width: 675px) {
+    .about-this-app-header {
+        font-size: 95px;
+    } 
+    .tech-stack-header {
+        font-size: 95px;
+    }
+    br {
+        display: none;
+    }
 
+}
 
 

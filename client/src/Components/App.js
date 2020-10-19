@@ -21,7 +21,7 @@ const App = () => {
             render={() => (
               <Fragment>
                 <Navbar tabs={["Sign Up"]} />
-                <Rotate />
+                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
                 <Login />
               </Fragment>
             )}
@@ -41,7 +41,7 @@ const App = () => {
             render={() => (
               <Fragment>
                 <Navbar tabs={["Login"]} />
-                <Rotate />
+                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
                 <SignUpForm />
               </Fragment>
             )}

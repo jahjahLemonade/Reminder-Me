@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import "../CSS/About.css";
-import clock from "../clock.jpg";
 import Navbar from "./Navbar";
 import { AuthContext } from "./Auth";
 
@@ -14,13 +13,22 @@ const About = () => {
   return (
     <div className="about-page">
       <Navbar tabs={aboutPageTabs}/>
+      <header>
+        <div className="title">
+          <h1>Reminder Me</h1>
+          <p>Scroll for more!</p>
+        </div>
+      </header>
       <div className="about-this-app">
-        <h6 className="about-this-app-header">About This Application</h6>
-        <p className="description">
+        <div className="header"><h6 className="about-this-app-header">About This Application</h6></div>
+        <div className="about-app">
+          <p className="description">
           Do You Have A Habit of Forgetting Stuff? Don't Worry!!!
           <br />
           Here's <b>Reminder Me</b> to The Rescue.
         </p>
+        </div>
+        <div className="about-app">
         <p className="description">
           <b>Reminder Me</b> is a reminder management application
           <br />
@@ -34,14 +42,17 @@ const About = () => {
           <br />
           important things in life.
         </p>
+        </div>
+       
         <h6 className="tech-stack-header">Tech Stack</h6>
+        <div>
         <h6 className="tech-stack">
-          Front-End: <p className="tech">React, Materialize UI, Font Awesome</p>
-        </h6>
-        <h6 className="tech-stack">
-          Back-End:{" "}
-          <p className="tech">Express.js, Firebase, Node.js, Twilio API</p>
-        </h6>
+           Front-End: <p className="tech">React, Materialize, Font-Awesome</p>
+         </h6>
+         <h6 className="tech-stack">
+           Back-End: <p className="tech">Express.js, Firebase, Node.js, Twilio</p>
+         </h6>
+        </div>
         <h6 className="link-to">
           Link to:
           <a
@@ -53,9 +64,6 @@ const About = () => {
             <i className="fa fa-github" style={{ fontSize: "36px" }}></i>
           </a>
         </h6>
-      </div>
-      <div className="clock-image">
-        <img className="clock" src={clock} alt="clock" />
       </div>
     </div>
   );
