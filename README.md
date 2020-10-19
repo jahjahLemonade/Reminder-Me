@@ -18,12 +18,11 @@ important things in life.
 <li>Fix issue with "Once" reminders disappearing before arrival time</li>
 <br />
 <h4>Things I will be adding soon</h4>
-<li>Have a "confirm password" input box on the sign up page</li>
-<li>Allow user to reset password</li>
 <li>Add user info tab on home screen</li>
 <li>Allow user to delete account</li>
-<li>Make website more responsive</li>
-<li>Make About page more modern</li>
+<li>Allow user to reset password</li>
+<li>Have a "confirm password" input box on the sign up page</li>
+
 
 <br />
 <br />
