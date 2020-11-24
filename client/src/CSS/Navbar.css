@@ -1,7 +1,6 @@
 .nav-wrapper {
     background-color: #ff4b5c;
 }
-
 nav .brand-logo {
     color: #e0ece4;
     margin-left: 90px;
@@ -32,7 +31,10 @@ nav ul a {
 nav li {
     width: auto;
 }
-
+.sidenav-overlay {
+    height: 0px;
+    width: 0px;
+  }
 
 
 

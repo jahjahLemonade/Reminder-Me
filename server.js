@@ -96,6 +96,12 @@ new cronJob('* * * * *', () => {
         reminder.date,
         reminder.id
       );
+      // User Create message
+      // Message in db with created prop as false
+      // Every min cron check db and turn creadted mesage to true
+      // Then create message once it change F to T
+      // Twilio will ignore created message
+      console.log(numbers)
       var textJob = new cronJob(
         `${minute} ${hour} ${frequency[0]} ${frequency[1]} ${frequency[2]}`,
         () => {
@@ -118,27 +124,7 @@ new cronJob('* * * * *', () => {
   }
   fetchData()
 }, null, true)
-  
-// app.post('/message', function (req, res) {
-//     var resp = new MessagingResponse();
-//     if( req.body.Body.trim().toLowerCase() === 'subscribe' ) {
-//       var fromNum = req.body.From;
-//       if(numbers.indexOf(fromNum) !== -1) {
-//         resp.message('You already subscribed!');
-//       } else {
-//         resp.message('Thank you, you are now subscribed. Reply "STOP" to stop receiving reminders.');
-//         usersRef.push(fromNum);
-//       }
-//     } else {
-//       resp.message('Welcome to Daily Reminder By Joshua. Text "Subscribe" to receive daily reminders.');
-//     }
-  
-//     res.writeHead(200, {
-//       'Content-Type':'text/xml'
-//     });
-//     res.end(resp.toString());
-  
-//   });
+
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

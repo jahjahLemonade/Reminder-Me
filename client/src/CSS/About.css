@@ -84,11 +84,14 @@ h6 {
 }
 
 @media only screen and (max-width: 675px) {
+    h1 {
+        font-size: 45px;
+    }
     .about-this-app-header {
-        font-size: 95px;
+        font-size: 60px;
     } 
     .tech-stack-header {
-        font-size: 95px;
+        font-size: 60px;
     }
     br {
         display: none;
