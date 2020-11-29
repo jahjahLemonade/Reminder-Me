@@ -14,7 +14,6 @@ important things in life.
 
 
 <h4>Issues I'm working on</h4>
-<li>Fix multiple sms issue when reminder arrive</li>
 <li>Fix issue with "Once" reminders disappearing before arrival time</li>
 <br />
 <h4>Things I will be adding soon</h4>

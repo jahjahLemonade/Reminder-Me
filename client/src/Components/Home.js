@@ -33,6 +33,7 @@ const Home = () => {
         message: message.value,
         timezone: timezone.value,
         userEmail: currUser.email,
+        created: false
       });
     document.getElementById("home").reset();
   };
