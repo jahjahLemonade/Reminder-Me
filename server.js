@@ -1,12 +1,11 @@
 require("dotenv").config();
 const path = require("path");
+const cors = require('cors');
 const twilio = require("twilio");
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_KEY
+  process.env.TWILIO_AUTH_KEY 
 );
-
-const cronJob = require("cron").CronJob;
 
 //const MessagingResponse = twilio.twiml.MessagingResponse;
 
@@ -14,6 +13,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -36,8 +36,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const db = firebase.firestore();
-
 const timeFactory = (hour, midday) => {
   if (midday === "AM" && hour === "12") {
     hour = "00";
@@ -55,75 +53,65 @@ const timeFactory = (hour, midday) => {
   }
   return String(hour);
 };
-const setReminderFrequency = (freq, date, id) => {
-  if ("Once" === freq) {
-    let dayOfTheWeek = new Date(date);
-    let day = dayOfTheWeek.getDay();
-    let dayOfTheMonth = date.slice(4, 6);
-    let monthOfTheYear = date.slice(0, 3);
-    db.collection("reminders").doc(id).delete();
-    return [dayOfTheMonth, monthOfTheYear, String("0" + day)];
-  } else if ("Daily" === freq) {
-    return ["*", "*", "*"];
-  } else if ("Weekly" === freq) {
-    let dayOfTheWeek = new Date(date);
-    let day = dayOfTheWeek.getDay();
-    return ["*", "*", String("0" + day)];
-  } else if ("Monthly" === freq) {
-    let dayOfTheMonth = date.slice(4, 6);
-    return [dayOfTheMonth, "*", "*"];
-  } else if ("Yearly" === freq) {
-    let monthOfTheYear = date.slice(0, 3);
-    return ["*", monthOfTheYear, "*"];
-  }
+year = ""
+month = ""
+day = ""
+const dateFactory = (date) => {
+    console.log('date -->',date)
+    const dateObj = new Date(date);
+    day = dateObj.getDate();
+    console.log('day -->',day)
+    month = dateObj.getMonth()+1;
+    console.log('month -->',month)
+    year = dateObj.getFullYear();
+    console.log('year -->',year)
 };
-new cronJob(
-  "* * * * *",
-  () => {
+app.post('/createMessage', (req, res) => {
+  // Call the desired function here
+  try {
+    const {
+      name,
+      phoneNumber,
+      time,
+      date,
+      message,
+      timezone
+    } = req.body
     const fetchData = async () => {
-      const numbers = [];
-      const data = await db.collection("reminders").get();
-      data.docs.map((doc) => {
-        numbers.push({ ...doc.data(), id: doc.id})
-      });
-      for (let reminder of numbers) {
-        let timeframe = reminder.time.slice(6, 8);
-        let minute = reminder.time.slice(3, 5);
-        let hour = reminder.time.slice(0, 2);
-        hour = timeFactory(hour, timeframe);
-        let frequency = setReminderFrequency(
-          reminder.frequency,
-          reminder.date,
-          reminder.id
-        );
-        if (reminder.created === false) {
-          db.collection("reminders").doc(reminder.id).update({created: true})
-          var textJob = new cronJob(
-            `${minute} ${hour} ${frequency[0]} ${frequency[1]} ${frequency[2]}`,
-            () => {
-              client.messages.create(
-                {
-                  to: reminder.phoneNumber,
-                  from: "4104691056", //Why "Reminder Me" id dont work?
-                  body: reminder.message,
-                },
-                (err, message) => {
-                  console.log(message.body, err);
-                }
-              );
-            },
-            null,
-            true,
-            reminder.timezone
-          );
+      let timeframe = time.slice(6, 8);
+      let minute = time.slice(3, 5);
+      let hour = time.slice(0, 2);
+      hour = timeFactory(hour, timeframe);
+      dateFactory(date)
+      //UTC conversion func
+      const localDate = new Date(year, month - 1, day, hour, minute);
+      const utcDate = new Date(localDate.toLocaleString("en-US", { timeZone: "UTC" }));
+
+      console.log("local -->",localDate, "utc -->", utcDate);
+      console.log('ph -->',phoneNumber)
+      client.messages.create(
+        {
+          messagingServiceSid: 'MG56cc572d1616f74cd2c5001b58ac663a',
+          body: message,
+          sendAt: '2023-07-16T04:09:55.000Z'.toLocaleString(),//utcDate.toISOString(),
+          scheduleType: 'fixed',
+          to: phoneNumber,
         }
-      }
-    };
+        ,
+        (err, message) => {
+          console.log("BE MSG --> ",message.body);
+          console.log("Error -> ",err);
+
+        }
+      ).then(message => console.log(message))
+    }
     fetchData();
-  },
-  null,
-  true
-);
+    // Send a response back to the frontend
+    console.log(res.json({ message: 'BE --> Function triggered successfully' }))
+  } catch (err) {
+    console.error("Error: ",err)
+  }
+});
 
 app.use(express.static(path.join(__dirname, "build")));
 app.get("/*", (req, res) => {

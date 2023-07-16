@@ -43,17 +43,15 @@ h6 {
 .about-this-app-header {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    font-size: 130px;
+    font-size: 80px;
     transition: 0.2s;
 }
 .description {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 24px;
 }
 .tech-stack-header{
-    margin-top: 15px;
-    font-size: 130px;
+    font-size: 80px;
     display: flex;
     justify-content: center; 
     transition: 0.2s;
@@ -66,7 +64,6 @@ h6 {
 }
 .link-to {
     font-weight: normal;
-    margin-top: 20px;
     font-size: 24px;
     display: flex;
     justify-content: center;

@@ -23,9 +23,3 @@ important things in life.
 <li>Have a "confirm password" input box on the sign up page</li>
 
 
-<br />
-<br />
-<img src="https://www.quickanddirtytips.com/sites/default/files/images/11666/types-of-reminders.png" alt="pic" width="300" align="left">
-<br />
-<br />
-Link: https://reminder-me-website.herokuapp.com/

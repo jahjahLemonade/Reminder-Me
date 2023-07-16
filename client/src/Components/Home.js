@@ -17,23 +17,30 @@ const Home = () => {
       phone_number,
       time,
       date,
-      frequency,
       message,
       timezone,
     } = e.target.elements;
-    firebase
-      .firestore()
-      .collection("reminders")
-      .add({
+    //Api call to back-end
+    fetch('http://localhost:3001/createMessage', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
         name: `${first_name.value} ${last_name.value}`,
         phoneNumber: phone_number.value,
         date: date.value,
         time: time.value,
-        frequency: frequency.value,
         message: message.value,
         timezone: timezone.value,
-        userEmail: currUser.email,
-        created: false
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response data here
+        console.log("FE ->",data);
+      })
+      .catch(error => {
+        // Handle any errors that occurred during the fetch call
+        console.error('Error:', error);
       });
     document.getElementById("home").reset();
   };
@@ -126,20 +133,6 @@ const Home = () => {
             </div>
           </div>
           <div id="freq" className="row">
-            <div className="input-field col s2">
-              <select
-                id="frequency"
-                defaultValue="Choose Frequency..."
-                required
-              >
-                <option value="">Choose Frequency...</option>
-                <option value="Once">Once</option>
-                <option value="Daily">Daily</option>
-                <option value="Monthly">Monthly</option>
-                <option value="Yearly">Yearly</option>
-              </select>
-              <label id="frequency">Frequency</label>
-            </div>
             <div className="input-field col s5">
               <textarea
                 id="message"
@@ -152,8 +145,8 @@ const Home = () => {
               </label>
             </div>
           </div>
-          <div 
-          className="create_button">
+          <div
+            className="create_button">
             <button
               id="create"
               className="waves-effect waves-light btn-large"

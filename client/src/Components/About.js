@@ -13,12 +13,6 @@ const About = () => {
   return (
     <div className="about-page">
       <Navbar tabs={aboutPageTabs}/>
-      <header>
-        <div className="title">
-          <h1>Reminder Me</h1>
-          <p>Scroll for more!</p>
-        </div>
-      </header>
       <div className="about-this-app">
         <div className="header"><h6 className="about-this-app-header">About This Application</h6></div>
         <div className="about-app">
@@ -47,10 +41,10 @@ const About = () => {
         <h6 className="tech-stack-header">Tech Stack</h6>
         <div>
         <h6 className="tech-stack">
-           Front-End: <p className="tech">React, Materialize, Font-Awesome</p>
+           Front-End: <p className="tech">React, Materialize</p>
          </h6>
          <h6 className="tech-stack">
-           Back-End: <p className="tech">Express.js, Firebase, Node.js, Twilio</p>
+           Back-End: <p className="tech">Node.js/Express.js, Firebase, Twilio API</p>
          </h6>
         </div>
         <h6 className="link-to">
