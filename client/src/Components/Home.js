@@ -21,7 +21,7 @@ const Home = () => {
       timezone,
     } = e.target.elements;
     //Api call to back-end
-    fetch('http://localhost:3001/createMessage', {
+    fetch('/createMessage', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
