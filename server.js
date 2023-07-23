@@ -66,7 +66,7 @@ app.post('*/createMessage', (req, res) => {
       time,
       date,
       message,
-      timezone
+      //timezone *should be used in conversion
     } = req.body
     const fetchData = async () => {
       let timeframe = time.slice(6, 8);
@@ -83,7 +83,7 @@ app.post('*/createMessage', (req, res) => {
       client.messages.create(
         {
           messagingServiceSid: 'MG56cc572d1616f74cd2c5001b58ac663a',
-          body: message,
+          body: `Hello ${name},\n ${message}`,
           sendAt: utcDate.toISOString(),
           scheduleType: 'fixed',
           to: phoneNumber,

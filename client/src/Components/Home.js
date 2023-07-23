@@ -30,7 +30,7 @@ const Home = () => {
         date: date.value,
         time: time.value,
         message: message.value,
-        timezone: timezone.value,
+        //timezone: timezone.value,
       })
     })
       .then(response => response.json())
