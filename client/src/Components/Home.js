@@ -42,7 +42,7 @@ const Home = () => {
         // Handle any errors that occurred during the fetch call
         console.error('Error:', error);
       });
-    document.getElementById("home").reset();
+    // document.getElementById("home").reset();
   };
 
   const handleClick = (e) => {

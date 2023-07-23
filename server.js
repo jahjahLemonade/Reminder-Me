@@ -60,6 +60,7 @@ const dateFactory = (date) => {
 app.post('*/createMessage', (req, res) => {
   // Call the desired function here
   try {
+    console.log('-->', req.body)
     const {
       name,
       phoneNumber,
