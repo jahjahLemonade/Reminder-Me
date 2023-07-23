@@ -57,7 +57,7 @@ const dateFactory = (date) => {
     year = dateObj.getFullYear();
     console.log('year -->',year)
 };
-app.post('/createMessage', (req, res) => {
+app.post('*/createMessage', (req, res) => {
   // Call the desired function here
   try {
     const {
