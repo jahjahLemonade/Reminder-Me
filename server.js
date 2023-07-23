@@ -14,17 +14,15 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 const firebase = require("firebase/app");
 require("firebase/firestore");
 
-var config = {
+const config = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "reminder-app-4be61.firebaseapp.com",
   databaseURL: "https://reminder-app-4be61.firebaseio.com/",
@@ -93,7 +91,7 @@ app.post('/createMessage', (req, res) => {
         {
           messagingServiceSid: 'MG56cc572d1616f74cd2c5001b58ac663a',
           body: message,
-          sendAt: '2023-07-16T04:09:55.000Z'.toLocaleString(),//utcDate.toISOString(),
+          sendAt: utcDate.toISOString(),
           scheduleType: 'fixed',
           to: phoneNumber,
         }
