@@ -21,7 +21,7 @@ const Home = () => {
       timezone,
     } = e.target.elements;
     //Api call to back-end
-    fetch('/createMessage', {
+    fetch('https://reminder-me.onrender.com/createMessage', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
