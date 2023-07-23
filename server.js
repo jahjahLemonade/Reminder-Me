@@ -7,10 +7,7 @@ const client = twilio(
   process.env.TWILIO_AUTH_KEY 
 );
 
-//const MessagingResponse = twilio.twiml.MessagingResponse;
-
 const express = require("express");
-const bodyParser = require("body-parser");
 const app = express();
 
 app.use(cors())
@@ -20,8 +17,8 @@ require("firebase/firestore");
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "reminder-app-4be61.firebaseapp.com",
-  databaseURL: "https://reminder-app-4be61.firebaseio.com/",
+  authDomain: process.env.AUTH_DOMAIN, 
+  databaseURL: process.env.DB_URL,
   projectId: "reminder-app-4be61",
   storageBucket: "reminder-app-4be61.appspot.com",
   messagingSenderId: "830815988398",
