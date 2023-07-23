@@ -42,7 +42,7 @@ const Home = () => {
         // Handle any errors that occurred during the fetch call
         console.error('Error:', error);
       });
-    // document.getElementById("home").reset();
+    document.getElementById("home").reset();
   };
 
   const handleClick = (e) => {
@@ -50,23 +50,11 @@ const Home = () => {
     firebase.firestore().collection("reminders").doc(id).delete();
   };
   useEffect(() => {
-    const db = firebase.firestore();
-    const fetchData = async () => {
-      const data = await db
-        .collection("reminders")
-        .where("userEmail", "==", currUser.email)
-        .get();
-      setReminderList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    fetchData();
-    //delete removed
-    const unsubscribe = db.collection("reminder").onSnapshot((snapshot) => {
-      const list = [];
-      snapshot.forEach((doc) => list.push({ ...doc.data(), id: doc.id }));
-      setReminderList(list);
-    });
-    return unsubscribe;
-  });
+    //fetch data from twilio
+    // const fetchData = async () => {
+    // }
+  })
+  
 
   return (
     <div>
