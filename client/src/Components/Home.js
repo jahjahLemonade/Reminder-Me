@@ -9,7 +9,7 @@ import axios from 'axios'
 const Home = () => {
   // const [reminderList, setReminderList] = useState([]);
   const { currUser } = useContext(AuthContext);
-  //Add form field into state
+  //---> Add form fields into states
 
   const handleSubmit = async (e) => {
     try {
@@ -24,7 +24,7 @@ const Home = () => {
         // timezone,
       } = e.target.elements;
       //Api call to back-end
-      await axios.post('https://reminder-me-api.onrender.com/createMessage', {
+      await axios.post('https://reminder-me.onrender.com/createMessage', {
         name: `${first_name.value} ${last_name.value}`,
         phoneNumber: phone_number.value,
         date: date.value,
