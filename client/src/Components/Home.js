@@ -33,10 +33,11 @@ const Home = () => {
       }).then(resp => console.log(resp.data))
     } catch (error) {
       console.error("Error: ", error)
+    } finally {
+      document.getElementById("home").reset();
     }
-    document.getElementById("home").reset();
   };
-
+ 
   const handleClick = (e) => {
     const id = e.target.parentElement.getAttribute("id");
     firebase.firestore().collection("reminders").doc(id).delete();
