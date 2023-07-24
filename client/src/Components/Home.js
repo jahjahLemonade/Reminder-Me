@@ -34,23 +34,6 @@ const Home = () => {
     } catch (error) {
       console.error("Error: ", error)
     }
-
-
-
-    fetch(, {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(\)
-    })
-      .then(response => console.log(response.json()))
-      .then(data => {
-        // Handle the response data here
-        console.log("FE ->", data);
-      })
-      .catch(error => {
-        // Handle any errors that occurred during the fetch call
-        console.error('Error:', error);
-      });
     document.getElementById("home").reset();
   };
 
