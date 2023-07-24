@@ -33,7 +33,7 @@ const Home = () => {
         //timezone: timezone.value,
       })
     })
-      .then(response => response.json())
+      .then(response => console.log(response.json()))
       .then(data => {
         // Handle the response data here
         console.log("FE ->",data);
