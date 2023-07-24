@@ -2,13 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import "../CSS/Home.css";
 import Navbar from "./Navbar";
 import Rotate from "./Rotate";
-import firebase from "./firebase";
+import firebase from "firebase";
 import { AuthContext } from "./Auth.js";
 import axios from 'axios'
 
 const Home = () => {
-  const [reminderList, setReminderList] = useState([]);
+  // const [reminderList, setReminderList] = useState([]);
   const { currUser } = useContext(AuthContext);
+  //Add form field into state
 
   const handleSubmit = async (e) => {
     try {
@@ -20,7 +21,7 @@ const Home = () => {
         time,
         date,
         message,
-        timezone,
+        // timezone,
       } = e.target.elements;
       //Api call to back-end
       await axios.post('https://reminder-me-api.onrender.com/createMessage', {
@@ -39,11 +40,11 @@ const Home = () => {
   };
  
   const handleClick = (e) => {
-    const id = e.target.parentElement.getAttribute("id");
-    firebase.firestore().collection("reminders").doc(id).delete();
+    // const id = e.target.parentElement.getAttribute("id");
+    console.log("Out of Order")
   };
   useEffect(() => {
-    //fetch data from twilio
+    //fetch data/messages from twilio
     // const fetchData = async () => {
     // }
   })
@@ -136,24 +137,21 @@ const Home = () => {
             </button>
           </div>
         </form>
+        {/* comment out if you need to see the page without a reminder */}
         <ul className="reminders">
-          {reminderList.map((e, i) => (
-            <div className="scheduledReminder" key={e.id} id={e.id}>
+            <div className="scheduledReminder">
               <button className="cross" onClick={handleClick}>
                 X
               </button>
-              <li id="name">Receiver: {e.name}</li>
-              <li id="arrivalTime">Arrival Time: {e.time}</li>
+              <li id="name">Receiver: {'Joe Brown'}</li>
+              <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
               <br />
-              <li id="phoneNum">Phone #: {e.phoneNumber}</li>
-              <li id="tz">Receiver's TZ: {e.timezone}</li>
+              <li id="phoneNum">Phone #: {'123-456-7897'}</li>
+              <li id="tz">Receiver's TZ: {'Eastern'}</li>
               <br />
-              <li id="dateCreated">Date Created: {e.date}</li>
-              <li id="freq">Repeat: {e.frequency}</li>
-              <br />
-              <li id="sms">Message: {e.message}</li>
+              <li id="dateCreated">Date Created: {'12/31/2099'}</li>
+              <li id="sms">Message: {'Hello World'}</li>
             </div>
-          ))}
         </ul>
       </div>
     </div>
