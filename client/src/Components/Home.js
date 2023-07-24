@@ -4,39 +4,48 @@ import Navbar from "./Navbar";
 import Rotate from "./Rotate";
 import firebase from "./firebase";
 import { AuthContext } from "./Auth.js";
+import axios from 'axios'
 
 const Home = () => {
   const [reminderList, setReminderList] = useState([]);
   const { currUser } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const {
-      first_name,
-      last_name,
-      phone_number,
-      time,
-      date,
-      message,
-      timezone,
-    } = e.target.elements;
-    //Api call to back-end
-    fetch('https://reminder-me-api.onrender.com/createMessage', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const {
+        first_name,
+        last_name,
+        phone_number,
+        time,
+        date,
+        message,
+        timezone,
+      } = e.target.elements;
+      //Api call to back-end
+      await axios.post('https://reminder-me-api.onrender.com/createMessage', {
         name: `${first_name.value} ${last_name.value}`,
         phoneNumber: phone_number.value,
         date: date.value,
         time: time.value,
         message: message.value,
         //timezone: timezone.value,
-      })
+      }).then(resp => console.log(resp.data))
+    } catch (error) {
+      console.error("Error: ", error)
+    }
+
+
+
+    fetch(, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(\)
     })
       .then(response => console.log(response.json()))
       .then(data => {
         // Handle the response data here
-        console.log("FE ->",data);
+        console.log("FE ->", data);
       })
       .catch(error => {
         // Handle any errors that occurred during the fetch call
@@ -54,7 +63,7 @@ const Home = () => {
     // const fetchData = async () => {
     // }
   })
-  
+
 
   return (
     <div>

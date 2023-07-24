@@ -60,14 +60,14 @@ const dateFactory = (date) => {
 app.post('/createMessage', (req, res) => {
   // Call the desired function here
   try {
-    console.log('-->', req, req.body)
+    console.log('-->', req.body)
     const {
       name,
       phoneNumber,
       time,
       date,
       message,
-      //timezone *should be used in conversion
+      //timezone *Should be used in conversion
     } = req.body
     const fetchData = async () => {
       let timeframe = time.slice(6, 8);
