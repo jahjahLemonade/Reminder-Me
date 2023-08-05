@@ -6,6 +6,7 @@ import SignUpForm from "./SignUpForm";
 import About from "./About";
 import Login from "./Login";
 import Home from "./Home";
+import LandingPage from "./LandingPage";
 import { AuthProvider } from "./Auth";
 import PrivateRoute  from "./PrivateRoute";
 
@@ -17,12 +18,12 @@ const App = () => {
           <PrivateRoute exact path="/" component={Home} />
           <Route
             exact
-            path="/Login"
+            path="/Landing"
             render={() => (
               <Fragment>
-                <Navbar tabs={["Sign Up"]} />
+                <Navbar tabs={["Login"]} />
                 <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
-                <Login />
+                <LandingPage />
               </Fragment>
             )}
           />
@@ -32,6 +33,17 @@ const App = () => {
             render={() => (
               <Fragment>
                 <About />
+              </Fragment>
+            )}
+          />
+          <Route
+            exact
+            path="/Login"
+            render={() => (
+              <Fragment>
+                <Navbar tabs={["Sign Up"]} />
+                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
+                <Login />
               </Fragment>
             )}
           />
