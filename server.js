@@ -78,13 +78,14 @@ app.post('/createMessage', (req, res) => {
       dateFactory(date)
       //UTC conversion func
       const localDate = new Date(year, month - 1, day, hour, minute);
-      const utcDate = new Date(localDate.toLocaleString("en-US", { timeZone: "UTC" }));
+      const utcDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000)//new Date(localDate.toLocaleString("en-US", { timeZone: "UTC" }));
 
-      console.log("local -->",localDate, "utc -->", utcDate);
+      console.log("local -->",localDate, "utc -->", utcDate, "after string func -->", utcDate.toISOString());
       console.log('ph -->',phoneNumber)
-      client.messages.create(
+      await client.messages.create(
         {
-          messagingServiceSid: 'MG56cc572d1616f74cd2c5001b58ac663a',
+          from: '+18886648381',
+          messagingServiceSid: process.env.TWILIO_MESSAGING_SERVICE_SID,
           body: `Hello ${name},\n ${message}`,
           sendAt: utcDate.toISOString(),
           scheduleType: 'fixed',
@@ -97,6 +98,7 @@ app.post('/createMessage', (req, res) => {
 
         }
       ).then(message => console.log(message))
+      .done();
     }
     fetchData();
     // Send a response back to the frontend

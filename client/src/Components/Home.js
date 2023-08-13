@@ -24,7 +24,7 @@ const Home = () => {
         // timezone,
       } = e.target.elements;
       //Api call to back-end
-      await axios.post('https://reminder-me.onrender.com/createMessage', {
+      await axios.post('http://localhost:3001/createMessage', {
         name: `${first_name.value} ${last_name.value}`,
         phoneNumber: phone_number.value,
         date: date.value,

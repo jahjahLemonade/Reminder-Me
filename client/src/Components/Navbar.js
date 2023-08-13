@@ -26,7 +26,7 @@ const Navbar = ({ tabs }) => {
             <Link to="/About">
               Reminder Me 
             </Link>
-          <img className="bell" src={bell} alt="bell" />
+          {/* <img className="bell" src={bell} alt="bell" /> */}
         </div>
         <a href="menu-selection" data-target="mobile-links" className="sidenav-trigger">
           <i className="material-icons">menu</i>

@@ -21,7 +21,7 @@ const App = () => {
             path="/Landing"
             render={() => (
               <Fragment>
-                <Navbar tabs={["Login"]} />
+                <Navbar tabs={["Login", "Sign Up"]} />
                 <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
                 <LandingPage />
               </Fragment>
