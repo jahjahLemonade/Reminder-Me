@@ -1,3 +1,6 @@
+import homeImage from './home.png';
+
+
 function Home() {
     return (
       <div className="Home">
@@ -12,7 +15,8 @@ function Home() {
             <span className="text-green-700 text-xl font-normal leading-[37px]"> </span>
             <span className="text-black text-xl font-normal leading-[37px]">to the rescue. Reminder Me is a reminder management application that lets you send reminders through text message.</span>
         </div>
-        
+        <div className="w-[161.63px] h-[25.20px] text-center text-neutral-50 text-2xl font-medium leading-7">Get Started</div>
+        <img className="w-[653px] h-[653px]" src={homeImage} alt="HomeImage"/>
       </div>
     );
   }
