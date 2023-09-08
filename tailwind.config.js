@@ -2,22 +2,10 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-module.exports = {
-  theme: {
     extend: {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
-      }
-    }
-  }
-}
-module.exports = {
-  theme: {
-    extend: {
+      },
       backgroundColor: {
         'nav-green': '#DDF3DE'
       },
