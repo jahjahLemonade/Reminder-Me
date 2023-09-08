@@ -1,66 +1,38 @@
-// import { Disclosure } from '@headlessui/react';
-// import { MenuIcon, XIcon } from '@heroicons/react/solid'; // Using Heroicons for menu icons
+import React from 'react';
 
-// const NavigationBar = () => {
-//   return (
-//     <Disclosure as="nav" className="bg-gray-800">
-//       {({ open }) => (
-//         <>
-//           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//             <div className="flex items-center justify-between h-16">
-//               <div className="flex items-center">
-//                 <div className="hidden md:block">
-//                   <div className="ml-10 flex items-baseline space-x-4">
-//                     <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-//                       Home
-//                     </a>
-//                     <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-//                       About
-//                     </a>
-//                     <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-//                       Sign Up
-//                     </a>
-//                     <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-//                       Login
-//                     </a>
-//                     <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-//                       Contact
-//                     </a>
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="-mr-2 flex md:hidden">
-//                 {/* Mobile menu button */}
-//                 <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-//                   <span className="sr-only">Open main menu</span>
-//                   {open ? <XIcon className="block h-6 w-6" aria-hidden="true" /> : <MenuIcon className="block h-6 w-6" aria-hidden="true" />}
-//                 </Disclosure.Button>
-//               </div>
-//             </div>
-//           </div>
+function App() {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-//           <Disclosure.Panel className="md:hidden">
-//             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-//               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-//                 Home
-//               </a>
-//               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-//                 About
-//               </a>
-//               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-//                 Sign Up
-//               </a>
-//               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-//                 Login
-//               </a>
-//               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-//                 Contact
-//               </a>
-//             </div>
-//           </Disclosure.Panel>
-//         </>
-//       )}
-//     </Disclosure>
-//   );
-// };
-// export default NavigationBar;
+  return (
+    <div className="bg-gray-800 text-white">
+      <div className="container mx-auto px-6 py-3">
+        <div className="flex justify-between items-center">
+          <div className="text-xl font-bold">REMINDER ME</div>
+          <div className="hidden md:flex">
+            <a href="#" className="px-3 py-2">Home</a>
+            <a href="#" className="px-3 py-2">About</a>
+            <a href="#" className="px-3 py-2">Sign Up</a>
+            <a href="#" className="px-3 py-2">Login</a>
+            <a href="#" className="px-3 py-2">Contact</a>
+          </div>
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              Menu
+            </button>
+          </div>
+        </div>
+        {isOpen && (
+          <div className="md:hidden">
+            <a href="#" className="block px-3 py-2">Home</a>
+            <a href="#" className="block px-3 py-2">About</a>
+            <a href="#" className="block px-3 py-2">Sign Up</a>
+            <a href="#" className="block px-3 py-2">Login</a>
+            <a href="#" className="block px-3 py-2">Contact</a>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;

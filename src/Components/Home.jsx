@@ -1,4 +1,4 @@
-import homeImage from './home.png';
+import homeImage from '../images/home.png';
 
 
 function Home() {
