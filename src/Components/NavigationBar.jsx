@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/logo.png';
-import ReminderMelogo from '../images/reminderMe.png';
+import ReminderMelogo from '../images/reminder_me.png';
 
 function App() {
   const [isOpen, setIsOpen] = React.useState(false);
