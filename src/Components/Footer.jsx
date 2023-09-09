@@ -1,25 +1,34 @@
+import React from 'react';
 import logoInvert from '../images/footer/logoInvert.png';
 import note from '../images/footer/fluent_note-28-filled.png';
 import github_logo from '../images/footer/akar-icons_github-fill.png';
-import linked_logo from '../images/footer/bi_linkedin.png';
+import linked_in_logo from '../images/footer/bi_linkedin.png';
 
 function App() {
     return (
-    <div className="w-[1440px] h-[90px] pl-[67px] pr-[63px] py-[25px] bg-green-700 justify-end items-start gap-[937px] inline-flex">
-        <div className="self-stretch justify-start items-center gap-2.5 inline-flex">
-            <img src={logoInvert} alt="logo" className="w-10 h-10 relative shadow"/>
-            <div className="text-white text-xl font-bold">REMINDER ME</div>
+    <div className="bg-green-700 text-white px-4 md:px-16 lg:pl-[67px] lg:pr-[63px] py-2 md:py-4 lg:py-[25px] flex items-center justify-between">
+        <div className="flex items-center space-x-2.5">
+            <a href="#" className="block">
+                <img src={logoInvert} alt="logo" className="w-6 h-6 md:w-8 md:h-8 lg:w-[34px] lg:h-[34px] relative shadow"/>
+            </a>
+            <a href="#" className="hidden md:block text-xl font-bold">REMINDER ME</a>
         </div>
-        <div className="w-[182px] justify-center items-start gap-10 inline-flex">
-            <div className="w-[34px] h-[34px] relative flex-col justify-start items-start flex">
-                <div className="w-[34px] h-[34px] relative">
-                </div>
-            </div>
-            <div className="w-[34px] h-[34px] relative flex-col justify-start items-start flex" />
-            <div className="w-[34px] h-[34px] relative flex-col justify-start items-start flex" />
+        <div className="flex space-x-2 md:space-x-4 lg:space-x-10">
+            <a href="#" className="block">
+                <img src={github_logo} alt="github_logo" className="w-6 h-6 md:w-8 md:h-8 lg:w-[34px] lg:h-[34px] relative"/>
+            </a>
+            <a href="#" className="block">
+                <img src={linked_in_logo} alt="linked_in_logo" className="w-6 h-6 md:w-8 md:h-8 lg:w-[34px] lg:h-[34px] relative"/>
+            </a>
+            <a href="#" className="block">
+                <img src={note} alt="note_logo" className="w-6 h-6 md:w-8 md:h-8 lg:w-[34px] lg:h-[34px] relative"/>
+            </a>
         </div>
     </div>
     );
-  }
-  
-  export default App;
+}
+
+export default App;
+
+
+
