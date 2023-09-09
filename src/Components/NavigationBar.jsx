@@ -17,9 +17,10 @@ function App() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="bg-nav-green text-black">
-      Home
-    </div>
+    <div className="bg-custom-blue">
+  This should have a custom blue background.
+</div>
+
   );
 }
 
