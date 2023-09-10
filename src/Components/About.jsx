@@ -53,19 +53,19 @@ function App() {
                 <span className="text-black text-xs font-medium leading-tight"><p className='inline-block'>Link to GitHub: <img src={GitLogo} alt="Git Logo" className="inline-block" /></p></span>
             </div>
             <div className='footer'>
-                <div className="w-[393px] h-10 bg-green-700 flex justify-end items-end pr-5 pb-3">
+                <div className="w-[393px] h-10 bg-green-700 flex items-center">
                     <button onClick={() => navigate('/')} className="ml-5 block">
                         <img src={logoInvert} alt="logo" className="w-[26px] h-[26px] shadow"/>
                     </button>
-                    <button onClick={() => navigate('/')} className=" w-[90px] h-[18px] text-white text-xs font-bold">REMINDER ME</button>
-                    <div className="w-[67px] h-[16.9px] flex items-center">
+                    <button onClick={() => navigate('/')} className="w-[90px] h-[18px] text-white text-xs font-bold">REMINDER ME</button>
+                    <div className="ml-[168px] w-[67px] h-[16.9px] flex items-center">
                         <a href="https://github.com/jspades93/Reminder-Me" target="_blank" rel="noopener noreferrer" className="inline-block mr-2">
                             <img src={github_logo} alt="github_logo" />
                         </a>
                         <a href="https://www.linkedin.com/in/joshua-lemay-bb288a13b/" target="_blank" rel="noopener noreferrer" className="inline-block mr-2">
                             <img src={linked_in_logo} alt="linked_in_logo" />
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block">
+                        <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block mr-">
                             <img src={note} alt="note_logo" />
                         </a>
                     </div>
