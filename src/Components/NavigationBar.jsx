@@ -4,8 +4,18 @@ import logo from '../images/logo.png';
 import ReminderMelogo from '../images/reminder_me.png';
 
 function App() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = React.useState(false);
   const [activePage, setActivePage] = React.useState('Home'); // For demo purposes
+
+  const navigateToPage = (page) => {
+    setActivePage(page);
+    if (page === 'Home') {
+      navigate('/');
+    } else {
+      navigate(`/${page.toLowerCase()}`);
+    }
+  };
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
@@ -20,14 +30,13 @@ function App() {
         </div>
         <div className="hidden md:flex space-x-3">
           {['Home', 'About', 'Contact'].map(page => (
-            <a 
+            <button
               key={page}
-              href="#" 
               className={`px-3 py-2 text-lg font-medium ${page === activePage ? 'text-[#2F8331] border-b-2 border-[#2F8331]' : 'text-black'}`}
-              onClick={() => setActivePage(page)}
+              onClick={() => navigateToPage(page)}
             >
               {page}
-            </a>
+            </button>
           ))}
         </div>
         <div className="flex space-x-4">
@@ -56,7 +65,7 @@ function App() {
               key={page}
               href="#" 
               className={`block px-3 py-2 text-lg font-medium ${page === activePage ? 'text-[#2F8331] border-b-2 border-[#2F8331]' : 'text-black'}`}
-              onClick={() => setActivePage(page)}
+              onClick={() => navigateToPage(page)}
             >
               {page}
             </a>

@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import homeImage from '../images/home.png';
 import Footer from './Footer';
 import NavigationBar from './NavigationBar';
@@ -7,7 +6,7 @@ import NavigationBar from './NavigationBar';
 function Home() {
     return (
       <div className="Home">
-        <div>
+        <div className='NavigationBar'>
           <NavigationBar/ >
         </div>
         <div className="w-[991px] h-[266px]">
