@@ -53,12 +53,6 @@ function App() {
                 <span className="text-black text-xs font-medium leading-tight"><p className='inline-block'>Link to GitHub: <img src={GitLogo} alt="Git Logo" className="inline-block" /></p></span>
             </div>
             <div className='footer'>
-                <div className="w-[393px] h-10 bg-green-700 flex items-center">
-                    <button onClick={() => navigate('/')} className="ml-5 block">
-                        <img src={logoInvert} alt="logo" className="w-[26px] h-[26px] shadow"/>
-                    </button>
-                    <button onClick={() => navigate('/')} className="mr-168 w-[90px] h-[18px] text-white text-xs font-bold">REMINDER ME</button>
-                </div>
                 <div className="w-[393px] h-10 bg-green-700 flex justify-end items-end pr-5 pb-3">
                     <button onClick={() => navigate('/')} className="ml-5 block">
                         <img src={logoInvert} alt="logo" className="w-[26px] h-[26px] shadow"/>
