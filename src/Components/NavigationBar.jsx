@@ -8,10 +8,14 @@ function App() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-      <div className="container mx-auto px-6 py-3 flex items-center justify-between pt-12 pl-16">
-        <div className="flex items-center">
-          <img src={logo} alt="logo" className="h-10 w-10 mr-3 rounded-full" />
-          <img src={ReminderMelogo} alt="logo" />
+      <div className="container mx-auto py-3 flex items-center justify-between pt-[51px] pl-[0px] pr-[0px]">
+        <div className="flex items-center space-x-3">
+          <a href="#" className="block">
+            <img src={logo} alt="logo" className="h-10 w-10 rounded-full" />
+          </a>
+          <a href="#" className="block">
+            <img src={ReminderMelogo} alt="Reminder Me logo" />
+          </a>
         </div>
         <div className="hidden md:flex space-x-3">
           {['Home', 'About', 'Contact'].map(page => (
@@ -25,20 +29,18 @@ function App() {
             </a>
           ))}
         </div>
-
         <div className="flex space-x-4">
           <button 
-            className="border border-[#9F9F9F] rounded-md bg-transparent text-black font-semibold text-sm px-6 py-2"
+            className="w-[126.58px] h-[50.63px] rounded-md border border-neutral-400 flex items-center justify-center"
           >
-            Sign Up
+            <span className="w-[70.89px] h-[21.52px] text-center text-black text-sm font-semibold">Sign Up</span>
           </button>
           <button 
-            className="rounded-md text-white font-semibold text-sm px-6 py-2 bg-gradient-to-r from-[#3DA93f] to-[#2F8331]"
+            className="w-[126.58px] h-[50.63px] bg-gradient-to-r from-green-600 to-green-700 rounded-[9px] border border-white flex items-center justify-center"
           >
-            Login
+            <span className="w-[58.23px] h-[21.52px] text-center text-white text-sm font-bold">Log in</span>
           </button>
         </div>
-
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             Menu
@@ -59,14 +61,14 @@ function App() {
             </a>
           ))}
           <button 
-            className="block px-4 py-2 mt-3 border border-[#9F9F9F] rounded-md bg-transparent text-black font-semibold text-sm"
+            className="block px-4 py-2 mt-3 w-[126.58px] h-[50.63px] rounded-md border border-neutral-400 flex items-center justify-center"
           >
-            Sign Up
+            <span className="w-[70.89px] h-[21.52px] text-center text-black text-sm font-semibold">Sign Up</span>
           </button>
           <button 
-            className="block px-4 py-2 mt-3 rounded-md text-white font-semibold text-sm bg-gradient-to-r from-[#3DA93f] to-[#2F8331]"
+            className="block px-4 py-2 mt-3 w-[126.58px] h-[50.63px] bg-gradient-to-r from-green-600 to-green-700 rounded-[9px] border border-white flex items-center justify-center"
           >
-            Login
+            <span className="w-[58.23px] h-[21.52px] text-center text-white text-sm font-bold">Log in</span>
           </button>
         </div>
       )}
