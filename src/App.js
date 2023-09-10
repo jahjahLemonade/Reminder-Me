@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import NavigationBar from './components/NavigationBar';
-import Footer from './components/Footer'
+import About from './components/About.jsx'
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
           {/* Navigation links can go here */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Footer />} />
+            <Route path="/about" element={<About />} />
             {/* Add more routes as needed */}
           </Routes>
         </div>

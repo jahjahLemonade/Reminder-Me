@@ -1,11 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import homeImage from '../images/home.png';
 import Footer from './Footer';
+import NavigationBar from './NavigationBar';
 
 
 function Home() {
     return (
       <div className="Home">
+        <div>
+          <NavigationBar/ >
+        </div>
         <div className="w-[991px] h-[266px]">
             <span className="text-zinc-900 text-[65px] font-bold leading-[82px]">Don't Miss Out On <br/>The </span>
             <span className="text-green-700 text-[65px] font-bold leading-[82px]">Important <br/>Things</span>
@@ -21,7 +25,7 @@ function Home() {
         <div className="text-center text-neutral-50 text-2xl font-medium leading-7">Get Started</div>
         </div>
         <img className="w-[653px] h-[653px]" src={homeImage} alt="HomeImage"/>
-        <div>
+        <div className='Footer'>
           <Footer/ >
         </div>
       </div>
