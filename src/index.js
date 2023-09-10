@@ -3,16 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './components/Home.jsx';
-import NavigationBar from './components/NavigationBar';
-import Footer from './components/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavigationBar />
-    <Home />
-    <Footer />
+    <App />
   </React.StrictMode>
 );
 

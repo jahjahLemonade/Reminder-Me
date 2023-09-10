@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import homeImage from '../images/home.png';
+import Footer from './Footer';
 
 
 function Home() {
@@ -19,6 +21,9 @@ function Home() {
         <div className="text-center text-neutral-50 text-2xl font-medium leading-7">Get Started</div>
         </div>
         <img className="w-[653px] h-[653px]" src={homeImage} alt="HomeImage"/>
+        <div>
+          <Footer/ >
+        </div>
       </div>
     );
   }
