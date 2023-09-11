@@ -18,6 +18,10 @@ module.exports = {
       textColor: {
         'reminder-green': '#318A33',
         'active-nav': '#2F8331'
+      },
+      screens: {
+        'mob': '393px',
+        'desk': '1440px',
       }
     },
   },

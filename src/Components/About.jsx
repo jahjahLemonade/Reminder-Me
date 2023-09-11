@@ -10,7 +10,7 @@ import linked_in_logo from '../images/footer/bi_linkedin.png';
 function App() {
     const navigate = useNavigate();
     return (
-        <div className="about h-[852px] w-[393px] mx-auto p-0">
+        <div className="about w-[393px] mx-auto p-0">
             <img 
                 src={AboutPic} 
                 alt="About Image" 
@@ -50,7 +50,7 @@ function App() {
                 <span className="text-black text-xs font-medium leading-tight"> Back-End:</span>
                 <span className="text-black text-xs font-light leading-tight"> Node.js/Express.js, Firebase, Twilio API</span>
                 <br/>
-                <span className="text-black text-xs font-medium leading-tight"><p className='inline-block'>Link to GitHub: <img src={GitLogo} alt="Git Logo" className="inline-block" /></p></span>
+                <span className="text-black text-xs font-medium leading-tight"><p className='inline-block'>Link to GitHub: <a href="https://github.com/jspades93/Reminder-Me" target="_blank"><img src={GitLogo} alt="Git Logo" className="inline-block" /></a></p></span>
             </div>
             <div className='footer'>
                 <div className="w-[393px] h-10 bg-green-700 flex items-center">
