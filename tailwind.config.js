@@ -22,6 +22,9 @@ module.exports = {
       screens: {
         'mob': '393px',
         'desk': '1440px',
+      },
+      spacing: {
+        '128': '60rem',
       }
     },
   },
