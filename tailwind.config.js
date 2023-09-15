@@ -24,7 +24,7 @@ module.exports = {
         'desk': '1440px',
       },
       spacing: {
-        '128': '60rem',
+        '128': '49rem',
       }
     },
   },
