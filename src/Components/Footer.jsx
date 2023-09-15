@@ -16,7 +16,7 @@ function Footer() {
                 <img src={logoInvert} alt="logo" className="mob:w-[26px] mob:h-[26px] desk:w-[53px] desk:h-[53px] desk:mt-2 desk:ml-5"/>
             </button>
             <button onClick={() => navigate('/')} className="inline-block mob:w-[90px] mob:h-[18px] text-white mob:text-xs font-bold desk:text-xl whitespace-nowrap desk:-ml-128">REMINDER ME</button>
-            <div className="mob:ml-[180px] mob:w-[67px] mob:h-[16.9px] flex items-center justify-between desk:w-[232px] desk:h-[34px] pr-0 desk:pr-[60px]">
+            <div className="mob:ml-[180px] mob:w-[67px] mob:h-[16.9px] flex items-center justify-between desk:w-[205px] desk:h-[34px] pr-0 desk:pr-[20px]">
                 <a href="https://github.com/jspades93/Reminder-Me" target="_blank" rel="noopener noreferrer" className="mob:inline-block mob:mr-2 desk:w-[34px] desk:h-[34px] desk:mr-[40px]">
                     <img src={github_logo} alt="github_logo" className="w-full h-full" />
                 </a>
