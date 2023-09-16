@@ -1,29 +1,5 @@
-.nav-wrapper {
-    background-color: #ff4b5c;
-}
-nav .brand-logo {
-    color: #e0ece4;
-    margin-left: 90px;
-    vertical-align: text-bottom;
-    display: inline-flex;
-    white-space: nowrap; /*prevent logo text from going to next line*/
-}
-@media only screen and (max-width: 1000px) {
-    nav .brand-logo {
-        margin-left: 0px;
-    }   
-}
-img.bell {
-    margin-left: 10px;
-    width: 50px;
-    height: 50px;
-    margin-top: 5px;
-}
-nav ul {
-    margin-right: 150px;
-    display: flex;
-}
-nav ul a {
+
+/* nav ul a {
     font-size: 18px;
     color: white;
 }
@@ -34,7 +10,7 @@ nav li {
 .sidenav-overlay {
     height: 0px;
     width: 0px;
-  }
+  } */
 
 
 

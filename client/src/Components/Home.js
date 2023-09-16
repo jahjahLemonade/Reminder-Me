@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../CSS/Home.css";
 import Navbar from "./Navbar";
-import Rotate from "./Rotate";
 import firebase from "firebase";
 import { AuthContext } from "./Auth.js";
 import axios from 'axios'
@@ -24,7 +23,7 @@ const Home = () => {
         // timezone,
       } = e.target.elements;
       //Api call to back-end
-      await axios.post('https://reminder-me.onrender.com/createMessage', {
+      await axios.post('http://localhost:3001/createMessage', {
         name: `${first_name.value} ${last_name.value}`,
         phoneNumber: phone_number.value,
         date: date.value,
@@ -55,7 +54,6 @@ const Home = () => {
       <Navbar tabs={["UserInfo", "Logout"]} />
       <div className="home-page">
         <form id="home" className="col s12" onSubmit={handleSubmit}>
-          <Rotate />
           <div className="row">
             <div className="input-field col s2">
               <input
