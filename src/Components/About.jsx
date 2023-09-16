@@ -6,17 +6,31 @@ import logoInvert from '../images/footer/logoInvert.png';
 import note from '../images/footer/fluent_note-28-filled.png';
 import github_logo from '../images/footer/akar-icons_github-fill.png';
 import linked_in_logo from '../images/footer/bi_linkedin.png';
+import NavigationBar from './NavigationBar';
+import Rectangle from '../images/Rectangle9.png';
+import Vector2 from '../images/Vector2.png';
 
 function App() {
     const navigate = useNavigate();
     return (
         <div className="about w-[393px] mx-auto p-0">
-            <img 
-                src={AboutPic} 
-                alt="About Image" 
-                className="mt-[77.25px] ml-[40.66px] mr-[27px] w-[325.34px] h-[216.37px]" 
-            />
-
+             <div className='NavBar'>
+                <NavigationBar/ >
+            </div>
+            <div 
+                className="bg-cover bg-center mt-[77.25px] ml-[40.66px] mr-[27px] w-[325.34px] h-[216.37px] relative" 
+                style={{ backgroundImage: `url(${Rectangle})` }}
+            >
+                <div
+                    className="absolute top-0 left-0 w-full h-full z-1"
+                    style={{ backgroundImage: `url(${Vector2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                ></div>
+                <img 
+                    src={AboutPic} 
+                    alt="About Image" 
+                    className="w-full h-full absolute top-0 left-0 z-2" 
+                />
+            </div>
             <div 
                 className="mt-[24.5px] ml-[31px] mr-[144px] w-[218px] h-[73px]"
             >

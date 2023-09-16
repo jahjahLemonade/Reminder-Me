@@ -35,6 +35,9 @@ function Home() {
   return (
     <div className="Home flex flex-col min-h-screen">
       {/* Navigation bar and main content */}
+      <div className='NavBar'>
+        <NavigationBar/ >
+      </div>
       <div className="flex-grow">
           {/* All your other components and content go here */}
       </div>

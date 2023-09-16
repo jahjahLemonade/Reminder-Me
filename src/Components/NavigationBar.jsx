@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-      <div className="container mx-auto py-3 flex items-center justify-between pt-[51px] pl-[0px] pr-[0px]">
+      <div className="container mx-auto py-3 flex items-center justify-between pt-[51px] pl-[61px] pr-[0px]">
         <div className="flex items-center space-x-3">
           <a href="#" className="block">
             <img src={logo} alt="logo" className="h-10 w-10 rounded-full" />
@@ -39,7 +39,7 @@ function App() {
             </button>
           ))}
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 pr-[27.67px]">
           <button 
             className="w-[126.58px] h-[50.63px] rounded-md border border-neutral-400 flex items-center justify-center"
           >
@@ -48,7 +48,7 @@ function App() {
           <button 
             className="w-[126.58px] h-[50.63px] bg-gradient-to-r from-green-600 to-green-700 rounded-[9px] border border-white flex items-center justify-center"
           >
-            <span className="w-[58.23px] h-[21.52px] text-center text-white text-sm font-bold">Log in</span>
+            <span className="w-[58.23px] h-[21.52px] text-center text-white text-sm font-bold ">Log in</span>
           </button>
         </div>
         <div className="md:hidden">
