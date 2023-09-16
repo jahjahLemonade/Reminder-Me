@@ -1,63 +1,68 @@
-import React, { Fragment} from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Updated imports
 import Navbar from "./Navbar";
-import Rotate from "./Rotate";
 import SignUpForm from "./SignUpForm";
 import About from "./About";
 import Login from "./Login";
 import Home from "./Home";
 import LandingPage from "./LandingPage";
 import { AuthProvider } from "./Auth";
-import PrivateRoute  from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+import Contact from "./Contact";
 
 const App = () => {
   return (
     <AuthProvider>
-      <Router>
-        <div className="App">
-          <PrivateRoute exact path="/" component={Home} />
-          <Route
-            exact
-            path="/Landing"
-            render={() => (
-              <Fragment>
-                <Navbar tabs={["Login", "Sign Up"]} />
-                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
-                <LandingPage />
-              </Fragment>
-            )}
-          />
-          <Route
-            exact
-            path="/About"
-            render={() => (
-              <Fragment>
-                <About />
-              </Fragment>
-            )}
-          />
-          <Route
-            exact
-            path="/Login"
-            render={() => (
-              <Fragment>
-                <Navbar tabs={["Sign Up"]} />
-                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
-                <Login />
-              </Fragment>
-            )}
-          />
-          <Route
-            exact
-            path="/Signup"
-            render={() => (
-              <Fragment>
-                <Navbar tabs={["Login"]} />
-                <Rotate style={{ marginLeft: "auto",  marginRight: "auto"}} />
-                <SignUpForm />
-              </Fragment>
-            )}
-          />
+      <Router> {/* Updated: Use Router instead of BrowserRouter */}
+        <div className="bg-[#DDF3DE]">
+          <Routes> {/* Updated: Use Routes instead of Route */}
+            {/* <PrivateRoute path="/" element={<Home />} /> Updated: Use element prop */}
+            <Route
+              path="/Landing"
+              element={ // Updated: Use element prop
+                <Fragment>
+                  <Navbar tabs={["Login", "Sign Up"]} />
+                  <LandingPage />
+                </Fragment>
+              }
+            />
+            <Route
+              path="/About"
+              element={ // Updated: Use element prop
+                <Fragment>
+                  <Navbar tabs={["Login", "Sign Up"]} />
+                  <About />
+                </Fragment>
+              }
+            />
+             <Route
+              path="/Contact"
+              element={ // Updated: Use element prop
+                <Fragment>
+                  <Navbar tabs={["Login", "Sign Up"]} />
+                  <Contact/>
+                </Fragment>
+              }
+            />
+            <Route
+              path="/Login"
+              element={ // Updated: Use element prop
+                <Fragment>
+                  <Navbar tabs={["Sign Up"]} />
+                  <Login />
+                </Fragment>
+              }
+            />
+            <Route
+              path="/Signup"
+              element={ // Updated: Use element prop
+                <Fragment>
+                  <Navbar tabs={["Login"]} />
+                  <SignUpForm />
+                </Fragment>
+              }
+            />
+          </Routes>
         </div>
       </Router>
     </AuthProvider>

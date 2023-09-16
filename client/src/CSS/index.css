@@ -1,10 +1,15 @@
-/* body {
-    background-color: whitesmoke;
+*,
+*::before,
+*::after {
+     box-sizing: border-box;
+}
+/* html {
+    min-height: 100vh;
 } */
 
-.input-field label {
+/* .input-field label {
     text-indent: 5px;
     margin-top: 7px;
     color: #66bfbf;
-}
+} */
 

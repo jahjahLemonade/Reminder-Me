@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../CSS/Home.css";
 import Navbar from "./Navbar";
-import Rotate from "./Rotate";
 import firebase from "firebase";
 import { AuthContext } from "./Auth.js";
 import axios from 'axios'
@@ -55,7 +54,6 @@ const Home = () => {
       <Navbar tabs={["UserInfo", "Logout"]} />
       <div className="home-page">
         <form id="home" className="col s12" onSubmit={handleSubmit}>
-          <Rotate />
           <div className="row">
             <div className="input-field col s2">
               <input
