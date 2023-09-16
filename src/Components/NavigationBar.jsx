@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import logo from '../images/logo.png';
 import ReminderMelogo from '../images/reminder_me.png';
+import Vector from '../images/Vector.png';
 
 function Nav() {
   const navigate = useNavigate();
@@ -31,31 +32,33 @@ function Nav() {
         <div className="hidden md:flex space-x-3">
           {['Home', 'About', 'Contact'].map(page => (
             <button
-              key={page}
-              className={`px-3 py-2 text-sm md:text-base lg:text-lg font-medium transition-colors duration-300 ${page === activePage ? 'text-[#2F8331] border-b-2 border-[#2F8331]' : 'text-black'}`}
-              onClick={() => navigateToPage(page)}
+                key={page}
+                className={`px-3 py-2 text-sm md:text-base lg:text-lg font-medium transition-colors duration-300 ${page === activePage ? 'text-[#2F8331]' : 'text-black'}`}
+                onClick={() => navigateToPage(page)}
             >
-              {page}
+                <span className={page === activePage ? 'border-b-2 border-[#2F8331]' : ''}>
+                    {page}
+                </span>
             </button>
           ))}
         </div>
-        <div className="flex space-x-4 pr-4">
-          <button 
-            className="w-full md:w-32 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
-          >
+        <div className="flex space-x-4 pr-4 hidden md:flex">  {/* Added "hidden md:flex" here */}
+        <button 
+            className="block px-4 py-2 mt-3 w-3/5 mx-auto md:w-32 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
+        >
             <span className="text-center text-black text-sm md:text-base font-semibold">Sign Up</span>
-          </button>
-          <button 
-            className="w-full md:w-32 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300"
-          >
+        </button>
+        <button 
+            className="block px-4 py-2 mt-3 w-3/5 mx-auto md:w-32 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300"
+        >
             <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
-          </button>
-        </div>
-        <div className="md:hidden">
+        </button>
+      </div>
+      <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            Menu
+              <img src={Vector} alt="Menu" />
           </button>
-        </div>
+      </div>
       </div>
 
       {isOpen && (
