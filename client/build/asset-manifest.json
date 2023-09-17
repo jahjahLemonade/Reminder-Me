@@ -1,7 +1,29 @@
 {
-  "main.css": "static/css/main.61ad45ec.css",
-  "main.css.map": "static/css/main.61ad45ec.css.map",
-  "main.js": "static/js/main.d00c0338.js",
-  "main.js.map": "static/js/main.d00c0338.js.map",
-  "static/media/clock2.jpg": "static/media/clock2.9665f0c2.jpg"
+  "files": {
+    "main.css": "/static/css/main.ad39af8c.css",
+    "main.js": "/static/js/main.473ecff3.js",
+    "static/media/about.png": "/static/media/about.89cec147fb054b6cb20b.png",
+    "static/media/lady.png": "/static/media/lady.02da5aa7fd3b9b8d937f.png",
+    "static/media/signup.png": "/static/media/signup.bcac96c155c266161407.png",
+    "static/media/Login.png": "/static/media/Login.24dfd54296094c96a1e3.png",
+    "static/media/contact.png": "/static/media/contact.fc055f369ba471cb12af.png",
+    "static/media/time.svg": "/static/media/time.a1728329c04c52c3e50dde43fba19098.svg",
+    "static/media/logo.svg": "/static/media/logo.e53035ce76639be16d8dea266429c7e3.svg",
+    "static/media/alarm.svg": "/static/media/alarm.ad4ca3cd62482ee11c41b05664b106e0.svg",
+    "static/media/clock.svg": "/static/media/clock.178db184c4567ca4734f2c0edf754295.svg",
+    "static/media/msg.svg": "/static/media/msg.07b2d00e5e81ff3a910aeab2120aa4da.svg",
+    "static/media/eye-slash.svg": "/static/media/eye-slash.07a6deec634c1b9712de2839ce387757.svg",
+    "static/media/call.svg": "/static/media/call.7062dda092ad7ba07101f2a10f92eab9.svg",
+    "index.html": "/index.html",
+    "static/media/Vector.svg": "/static/media/Vector.77eacba5f2a6231de0e778e79583c18a.svg",
+    "static/media/email1.svg": "/static/media/email1.a8f2b1d874b72454f9b46ca6be9406df.svg",
+    "static/media/phone.svg": "/static/media/phone.d1377db93728e599d2312f1f5e60987f.svg",
+    "static/media/name.svg": "/static/media/name.a4eef5d19dced593ec1cebdeff2f2e1b.svg",
+    "main.ad39af8c.css.map": "/static/css/main.ad39af8c.css.map",
+    "main.473ecff3.js.map": "/static/js/main.473ecff3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad39af8c.css",
+    "static/js/main.473ecff3.js"
+  ]
 }
