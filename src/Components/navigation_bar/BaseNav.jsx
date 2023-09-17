@@ -72,7 +72,7 @@ function Nav() {
             </div>
         </div>
         {isOpen && (
-            <div className="absolute z-10 w-full flex flex-col items-center bg-white bg-opacity-60 backdrop-blur-md pb-4"> {/* Applied blur effect and made background slightly transparent */}
+            <div className="absolute z-50 w-full flex flex-col items-center bg-white bg-opacity-60 backdrop-blur-md pb-4"> {/* Applied blur effect and made background slightly transparent */}
                 {['Home', 'About', 'Contact'].map(page => (
                     <a 
                     key={page}
