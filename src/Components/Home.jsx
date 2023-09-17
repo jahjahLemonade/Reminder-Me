@@ -1,6 +1,6 @@
 import homeImage from '../images/home.png';
 import Footer from './Footer';
-import NavigationBar from './MobFirstNav';
+import NavigationBar from './navigation_bar/BaseNav.jsx';
 
 
 // function Home() {

@@ -6,7 +6,7 @@ import logoInvert from '../images/footer/logoInvert.png';
 import note from '../images/footer/fluent_note-28-filled.png';
 import github_logo from '../images/footer/akar-icons_github-fill.png';
 import linked_in_logo from '../images/footer/bi_linkedin.png';
-import NavigationBar from './NavigationBar';
+import NavigationBar from './navigation_bar/BaseNav';
 import Rectangle from '../images/Rectangle9.png';
 import Vector2 from '../images/Vector2.png';
 

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import CombinedLogo from '../images/logoCombined.png';
-import ReminderMelogo from '../images/reminder_me.png';
-import ClearLogo from '../images/logo.png';
-import Vector from '../images/Vector.png';
+import CombinedLogo from '../../images/logoCombined.png';
+import ReminderMelogo from '../../images/reminder_me.png';
+import ClearLogo from '../../images/logo.png';
+import Vector from '../../images/Vector.png';
 
 
 function Nav() {
@@ -22,17 +22,20 @@ function Nav() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-        <div className="flex items-center space-x-3 mt-[3.5%] ml-[3.4%]">
-            <button onClick={() => navigate('/')} className="block mid:hidden">
-                <img src={CombinedLogo} alt="Reminder Me logo" />
-            </button>
-            <button onClick={() => navigate('/')} className="block hidden mid:inline">
-                <img src={ClearLogo} alt="logo" className="" />
-            </button>
-            <button onClick={() => navigate('/')} className="block hidden mid:inline">
-                <img src={ReminderMelogo} alt="Reminder Me logo" />
-            </button>
-            <div className="hidden md:flex flex-grow justify-center space-x-3">
+        <div className="flex items-center justify-between mt-[3.5%] ml-[3.4%]">
+            {/* Nested flex for ReminderMe and Clear logos */}
+            <div className="flex items-center space-x-3">
+                <button onClick={() => navigate('/')} className="block mid:hidden">
+                    <img src={CombinedLogo} alt="Reminder Me logo" />
+                </button>
+                <button onClick={() => navigate('/')} className="block hidden mid:inline">
+                    <img src={ClearLogo} alt="logo" />
+                </button>
+                <button onClick={() => navigate('/')} className="block hidden mid:inline">
+                    <img src={ReminderMelogo} alt="Reminder Me logo" />
+                </button>
+            </div>
+            <div className="hidden lmd:flex flex-grow justify-center space-x-3">
                 {['Home', 'About', 'Contact'].map(page => (
                     <button
                         key={page}
@@ -45,7 +48,7 @@ function Nav() {
                     </button>
                 ))}
             </div>
-                <div className="flex space-x-4 pr-6 hidden md:flex">  {/* Added "hidden md:flex" here */} 
+                <div className="flex space-x-4 pr-6 hidden lmd:flex">  {/* Added "hidden md:flex" here */} 
                 <button 
                     className="block px-4 py-2 mt-3 w-3/5 mx-auto md:w-32 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
                 >
@@ -57,14 +60,14 @@ function Nav() {
                     <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
                 </button>
             </div>
-            <div className="md:hidden -mr-30 mt-1.5">
+            <div className="lmd:hidden mt-1.5 mr-[3.4%] ">
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <img src={Vector} alt="Menu" />
                 </button>
             </div>
         </div>
         {isOpen && (
-            <div className="md:hidden flex flex-col items-center">
+            <div className="lmd:hidden flex flex-col items-center">
             {['Home', 'About', 'Contact'].map(page => (
                 <a 
                 key={page}
