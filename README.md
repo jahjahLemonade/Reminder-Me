@@ -13,8 +13,6 @@ time, not letting you or your friends miss out on the
 important things in life.
 
 
-<h4>Issues I'm working on</h4>
-<br />
 <h4>Things I will be adding soon</h4>
 <li>Add user info tab on home screen</li>
 <li>Allow user to delete account</li>
@@ -22,4 +20,4 @@ important things in life.
 <li>Have a "confirm password" input box on the sign up page</li>
 
 <br>
-Link: https://reminder-me.onrender.com
+Link: https://reminder-me.onrender.com/Landing

@@ -8,6 +8,7 @@ client/node_modules/*
 
 # production
 client/build
+client/.env
 .vscode
 # misc
 .DS_Store
