@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import React from 'react';
 import CombinedLogo from '../../images/logoCombined.png';
 import ReminderMelogo from '../../images/reminder_me.png';
@@ -8,8 +8,13 @@ import Vector from '../../images/Vector.png';
 
 function Nav() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activePage, setActivePage] = React.useState(
+    location.pathname === '/' ? 'Home' : location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2)
+  );
+  
   const [isOpen, setIsOpen] = React.useState(false);
-  const [activePage, setActivePage] = React.useState('Home');
 
   const navigateToPage = (page) => {
     setActivePage(page);
@@ -21,7 +26,7 @@ function Nav() {
   };
 
   return (
-    <div className="bg-[#DDF3DE] text-black font-poppins">
+    <div className="bg-[#DDF3DE] text-black font-poppins relative">
         <div className="flex items-center justify-between mt-[3.5%] ml-[3.4%]">
             {/* Nested flex for ReminderMe and Clear logos */}
             <div className="flex items-center space-x-3">
@@ -67,27 +72,27 @@ function Nav() {
             </div>
         </div>
         {isOpen && (
-            <div className="lmd:hidden flex flex-col items-center">
-            {['Home', 'About', 'Contact'].map(page => (
-                <a 
-                key={page}
-                href="#" 
-                className={`block px-3 py-2 text-center text-sm md:text-base lg:text-lg font-medium transition-colors duration-300 ${page === activePage ? 'text-[#2F8331] border-b-2 border-[#2F8331]' : 'text-black'}`}
-                onClick={() => navigateToPage(page)}
+            <div className="absolute z-10 w-full flex flex-col items-center bg-white bg-opacity-60 backdrop-blur-md pb-4"> {/* Applied blur effect and made background slightly transparent */}
+                {['Home', 'About', 'Contact'].map(page => (
+                    <a 
+                    key={page}
+                    href="#" 
+                    className={`block px-3 py-2 text-center text-sm md:text-base lg:text-lg font-medium transition-colors duration-300 ${page === activePage ? 'text-[#2F8331] border-b-2 border-[#2F8331]' : 'text-black'}`}
+                    onClick={() => navigateToPage(page)}
+                    >
+                    {page}
+                    </a>
+                ))}
+                <button 
+                    className="block px-4 py-2 mt-3 w-3/5 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
                 >
-                {page}
-                </a>
-            ))}
-            <button 
-                className="block px-4 py-2 mt-3 w-3/5 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
-            >
-                <span className="text-center text-black text-sm md:text-base font-semibold">Sign Up</span>
-            </button>
-            <button 
-                className="block px-4 py-2 mt-3 w-3/5 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300"
-            >
-                <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
-            </button>
+                    <span className="text-center text-black text-sm md:text-base font-semibold">Sign Up</span>
+                </button>
+                <button 
+                    className="block px-4 py-2 mt-3 w-3/5 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300"
+                >
+                    <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
+                </button>
             </div>
         )}
     </div>

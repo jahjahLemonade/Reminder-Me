@@ -1,8 +1,7 @@
-import homeImage from '../images/home.png';
 import Footer from './Footer';
 import NavigationBar from './navigation_bar/BaseNav.jsx';
 
-function Home() {
+function Login() {
   return (
     <div className="Home flex flex-col min-h-screen">
       {/* Navigation bar and main content */}
@@ -21,4 +20,4 @@ function Home() {
   );
 }
   
-export default Home;
+export default Login;

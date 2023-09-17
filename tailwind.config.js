@@ -6,6 +6,9 @@ module.exports = {
     './src/*.{js,jsx}',],
   theme: {
     extend: {
+      borderRadius: {
+        'custom': '2rem'
+      },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
