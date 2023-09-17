@@ -22,7 +22,7 @@ function Nav() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-        <div className="flex items-center space-x-3 mt-[3.4%] ml-[3.3%]">
+        <div className="flex items-center space-x-3 mt-[3.5%] ml-[3.4%]">
             <button onClick={() => navigate('/')} className="block mid:hidden">
                 <img src={CombinedLogo} alt="Reminder Me logo" />
             </button>
@@ -32,7 +32,7 @@ function Nav() {
             <button onClick={() => navigate('/')} className="block hidden mid:inline">
                 <img src={ReminderMelogo} alt="Reminder Me logo" />
             </button>
-            {/* <div className="hidden md:flex space-x-3">
+            <div className="hidden md:flex flex-grow justify-center space-x-3">
                 {['Home', 'About', 'Contact'].map(page => (
                     <button
                         key={page}
@@ -44,9 +44,9 @@ function Nav() {
                         </span>
                     </button>
                 ))}
-                </div>
-                <div className="flex space-x-4 pr-4 hidden md:flex">  {/* Added "hidden md:flex" here */}
-                {/* <button 
+            </div>
+                <div className="flex space-x-4 pr-4 hidden md:flex">  {/* Added "hidden md:flex" here */} 
+                <button 
                     className="block px-4 py-2 mt-3 w-3/5 mx-auto md:w-32 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
                 >
                     <span className="text-center text-black text-sm md:text-base font-semibold">Sign Up</span>
@@ -61,9 +61,9 @@ function Nav() {
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <img src={Vector} alt="Menu" />
                 </button>
-            </div> */} 
+            </div>
         </div>
-        {/* {isOpen && (
+        {isOpen && (
             <div className="md:hidden flex flex-col items-center">
             {['Home', 'About', 'Contact'].map(page => (
                 <a 
@@ -86,7 +86,7 @@ function Nav() {
                 <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
             </button>
             </div>
-        )} */}
+        )}
     </div>
   );
 }
