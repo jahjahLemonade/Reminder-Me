@@ -23,7 +23,7 @@ const Navbar = ({ tabs }) => {
   }, []);
   return (
     <div>
-      <nav className="nav-wrapper lg:h-36 bg-[#ddf3de] shadow-none">
+      <nav className="nav-wrapper lg:h-28 bg-[#ddf3de] shadow-none">
         <div className="h-full flex justify-between items-center pl-[1.25rem] md:px-[2.5rem]">
           <img className="shrink-0 md:w-48 xl:w-60" src={logo} alt="logo" />
           <a href="menu-selection" data-target="mobile-links" className="sidenav-trigger">

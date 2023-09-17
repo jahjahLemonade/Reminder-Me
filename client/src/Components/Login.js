@@ -32,11 +32,11 @@ const Login = ({ history }) => {
     return (
         <div>
             <div className="px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
-                <form className="flex flex-col lg:h-[36rem] lg:flex-row  justify-center lg:justify-around bg-[#fff] mt-8 md:mt-20 rounded-xl" onSubmit={handleLogin}>
-                    <div className="flex justify-center"><img className="w-full sm:max-w-[45rem]" src={login} /></div>
-                    <div className="w-full lg:max-w-[32rem] px-[0.6rem] lg:flex lg:flex-col lg:justify-center">
+                <form className="flex flex-col lg:flex-row  justify-center lg:justify-around bg-[#fff] mt-8 md:mt-20 lg:pt-24 lg:pb-16 rounded-xl" onSubmit={handleLogin}>
+                    <div className="flex justify-center | lg:py-16"><img className="w-full sm:max-w-[45rem]" src={login} /></div>
+                    <div className="w-full px-[0.6rem] | lg:max-w-[32rem] lg:flex lg:flex-col lg:justify-center">
                         <div>
-                            <p className="text-[1.25rem] font-semibold md:text-[1.75rem] lg:text-[2rem] mb-[2.62rem]">Login to your account</p>
+                            <p className="text-[1.25rem] font-semibold mb-[2.62rem] | md:text-[1.75rem] | lg:text-[2rem]">Login to your account</p>
                             <div>
                             <label htmlFor="login_email">Email</label>
                                 <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
