@@ -22,7 +22,7 @@ function Nav() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-        <div className="flex items-center space-x-3 mt-[3.5%] ml-[3.3%]">
+        <div className="flex items-center space-x-3 mt-[3.4%] ml-[3.3%]">
             <button onClick={() => navigate('/')} className="block mid:hidden">
                 <img src={CombinedLogo} alt="Reminder Me logo" />
             </button>
