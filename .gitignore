@@ -9,7 +9,7 @@ client/node_modules/*
 # production
 client/build
 .vscode
-
+client/firebase.js
 # misc
 .DS_Store
 .env.local
