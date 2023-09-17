@@ -20,16 +20,22 @@ function Nav() {
 
   return (
     <div className="bg-[#DDF3DE] text-black font-poppins">
-      <div className="container mx-auto py-3 flex items-center justify-between px-4 md:px-8 lg:px-12 xl:px-16">
-        <div className="flex items-center space-x-3">
-          <a href="#" className="block ">
-            <img src={logo} alt="logo" className="h-10 w-10 rounded-full" />
-          </a>
-          <a href="#" className="block">
-            <img src={ReminderMelogo} alt="Reminder Me logo" />
-          </a>
-        </div>
-        <div className="hidden md:flex space-x-3">
+    <div className="container mx-auto py-3 flex items-center justify-between px-4 md:px-8 lg:px-12 xl:px-16">
+      <div className="flex items-center space-x-3">
+        {isOpen ? (
+          <img src={Vector} alt="New Image" className="h-10 w-10 rounded-full" />
+        ) : (
+          <>
+            <a href="#" className="block">
+              <img src={logo} alt="logo" className="h-10 w-10 rounded-full" />
+            </a>
+            <a href="#" className="block">
+              <img src={ReminderMelogo} alt="Reminder Me logo" />
+            </a>
+          </>
+        )}
+      </div>
+      <div className="hidden md:flex space-x-3">
           {['Home', 'About', 'Contact'].map(page => (
             <button
                 key={page}
