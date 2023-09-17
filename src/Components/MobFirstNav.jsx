@@ -45,7 +45,7 @@ function Nav() {
                     </button>
                 ))}
             </div>
-                <div className="flex space-x-4 pr-4 hidden md:flex">  {/* Added "hidden md:flex" here */} 
+                <div className="flex space-x-4 pr-6 hidden md:flex">  {/* Added "hidden md:flex" here */} 
                 <button 
                     className="block px-4 py-2 mt-3 w-3/5 mx-auto md:w-32 h-12 rounded-md border border-neutral-400 flex items-center justify-center transition-all duration-300"
                 >
