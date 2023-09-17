@@ -16,7 +16,12 @@ const App = () => {
       <Router> {/* Updated: Use Router instead of BrowserRouter */}
         <div className="bg-[#DDF3DE]">
           <Routes> {/* Updated: Use Routes instead of Route */}
-            {/* <PrivateRoute path="/" element={<Home />} /> Updated: Use element prop */}
+            <Route
+            path="/" 
+            element={
+              <PrivateRoute element={<Home />} />
+            }
+            />
             <Route
               path="/Landing"
               element={ // Updated: Use element prop

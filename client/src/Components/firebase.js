@@ -1,11 +1,12 @@
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import env from 'react-dotenv'
 
 var config = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DB_URL,
+    apiKey: env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: env.REACT_APP_DB_URL,
     projectId: "reminder-app-4be61",
     storageBucket: "reminder-app-4be61.appspot.com",
     messagingSenderId: "830815988398",
@@ -13,6 +14,5 @@ var config = {
     measurementId: "G-T600ZD0201"
 }
 firebase.initializeApp(config)
-
 
 export default firebase

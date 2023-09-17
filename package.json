@@ -19,7 +19,7 @@
     "concurrently": "^3.5.1",
     "cors": "^2.8.5",
     "cron": "^1.8.2",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
     "express": "^4.16.2",
     "firebase": "^7.21.0",
     "materialize": "^1.0.0",
