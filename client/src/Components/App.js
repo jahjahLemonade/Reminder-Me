@@ -1,12 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Updated imports
 import Navbar from "./Navbar";
 import SignUpForm from "./SignUpForm";
 import About from "./About";
 import Login from "./Login";
 import Home from "./Home";
-import LandingPage from "./LandingPage";
-import { AuthProvider } from "./Auth";
+import { AuthProvider} from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "./Contact";
 
@@ -23,15 +22,6 @@ const App = () => {
             }
             />
             <Route
-              path="/Landing"
-              element={ // Updated: Use element prop
-                <Fragment>
-                  <Navbar tabs={["Login", "Sign Up"]} />
-                  <LandingPage />
-                </Fragment>
-              }
-            />
-            <Route
               path="/About"
               element={ // Updated: Use element prop
                 <Fragment>
@@ -40,12 +30,12 @@ const App = () => {
                 </Fragment>
               }
             />
-             <Route
+            <Route
               path="/Contact"
               element={ // Updated: Use element prop
                 <Fragment>
                   <Navbar tabs={["Login", "Sign Up"]} />
-                  <Contact/>
+                  <Contact />
                 </Fragment>
               }
             />

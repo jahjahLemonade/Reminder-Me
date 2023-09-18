@@ -1,22 +1,22 @@
-import React, { useContext } from "react";
-import { Route, Routes, redirect } from "react-router-dom";
+import React, { Fragment, useContext } from "react";
 import { AuthContext } from "./Auth.js";
+import LandingPage from "./LandingPage";
+import Navbar from "./Navbar.js";
 
 const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
   const { currUser } = useContext(AuthContext);
   return (
-    <Routes>
-      <Route
-        {...rest}
-        render={routeProps =>
-          currUser ? (
-            <RouteComponent {...routeProps} />
-          ) : (
-              redirect("/Landing")
-            )
-        }
-      />
-    </Routes>
+    currUser ? (
+      <Fragment>
+        <Navbar tabs={["Logout"]} />
+        <RouteComponent {...routeProps} />
+      </Fragment>
+    ) : (
+        <Fragment>
+          <Navbar tabs={["Login", "Sign Up"]} />
+          <LandingPage />
+        </Fragment>
+      )
   );
 };
 
