@@ -19,7 +19,7 @@ function Contact() {
 
     const [messageValue, setMessageValue] = useState('');
     const [messageFocused, setMessageFocused] = useState(false);
-    
+
     return (
       <div className="Home flex flex-col min-h-screen">
         {/* Navigation bar */}
@@ -91,7 +91,7 @@ function Contact() {
                 <div className="relative flex flex-col">
                     <div className="text-black text-xs font-light font-poppins mb-2">Message</div>
                     <div className="relative">
-                        <img src={Note} alt="Note Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2" />
+                        <img src={Note} alt="Note Icon" className="absolute left-3 top-4" />
                         <textarea
                             className="w-full h-[120px] bg-white rounded-lg border border-violet-100 pl-10 p-3 resize-none"
                             onFocus={() => setMessageFocused(true)}
@@ -99,7 +99,7 @@ function Contact() {
                             onChange={(e) => setMessageValue(e.target.value)}
                         ></textarea>
                         <div 
-                            className={`absolute left-10 transform transition-all duration-300 ${messageFocused || messageValue ? 'top-2 text-xs opacity-50' : 'text-sm top-1/2 -translate-y-1/2 opacity-100'} text-neutral-300 font-light font-poppins`}
+                            className={`absolute left-10 transform transition-all duration-300 ${messageFocused || messageValue ? 'top-1 text-xs opacity-50' : 'top-4 text-sm opacity-100'} text-neutral-300 font-light font-poppins`}
                         >
                             Write message
                         </div>
