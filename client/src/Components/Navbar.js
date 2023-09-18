@@ -30,7 +30,7 @@ const Navbar = ({ tabs }) => {
             <i className="material-icons text-[#318A33]">menu</i>
           </a>
           <div className="right hide-on-med-and-down text-lg font-medium">
-            {[["Home", "/Landing"],
+            {[["Home", "/"],
             ["About", "/About"],
             ["Contact", "/Contact"]].map(([text, url]) => (
               <NavLink to={url}
