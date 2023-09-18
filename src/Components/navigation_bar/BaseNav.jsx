@@ -89,7 +89,7 @@ function Nav() {
                     <span className="text-center text-black text-sm md:text-base font-semibold">Sign Up</span>
                 </button>
                 <button 
-                    className="block px-4 py-2 mt-3 w-3/5 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300"
+                    className="block px-4 py-2 mt-3 w-3/5 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-md border border-white flex items-center justify-center transition-all duration-300 "
                 >
                     <span className="text-center text-white text-sm md:text-base font-bold">Log in</span>
                 </button>
