@@ -48,10 +48,9 @@ function Contact() {
               {/* Content inside ContactBackground1 */}
               <div className="flex flex-col pl-2.5 space-y-2 px-2.5 pb-[10%]">  {/* Added pb-[5%] here */}
                 <img src={ContactImage} alt="Contact Us" className="w-[236px] h-[236px]" />
-                <div className="text-black text-xl font-semibold font-poppins">Contact us</div>
-
+                <div className="text-black text-xl font-semibold font-poppins mb-2">Contact us</div>
                 <div className="relative flex flex-col">
-                    <div className="text-black text-xs font-light font-poppins mb-2">Email address</div>
+                    <div className="text-black text-xs font-light font-poppins mb-2 md:text-[1.0001rem] md:mt-3">Email address</div>
                     <div className="relative flex items-center">
                         <img src={Email} alt="Email Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2" />
                         <input 
@@ -70,7 +69,7 @@ function Contact() {
                 </div>
 
                 <div className="relative flex flex-col mb-4">
-                    <div className="text-black text-xs font-light font-poppins mb-2">Contact</div>
+                    <div className="text-black text-xs font-light font-poppins mb-2 md:text-[1.0001rem]">Contact</div>
                     <div className="relative flex items-center">
                         <img src={Phone} alt="Phone Icon" className="absolute left-3 top-1/2 transform -translate-y-1/2" />
                         <input 
@@ -89,7 +88,7 @@ function Contact() {
                 </div>
 
                 <div className="relative flex flex-col">
-                    <div className="text-black text-xs font-light font-poppins mb-2">Message</div>
+                    <div className="text-black text-xs font-light font-poppins mb-2 md:text-[1.0001rem]">Message</div>
                     <div className="relative">
                         <img src={Note} alt="Note Icon" className="absolute left-3 top-4" />
                         <textarea
@@ -106,7 +105,7 @@ function Contact() {
                     </div>
                 </div>
                 <button className="w-[186px] h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-lg shadow border border-white flex items-center justify-center mb-5">  {/* Added mb-5 here */}
-                <span className="text-neutral-50 text-xs font-semibold font-poppins leading-7">Submit</span>
+                <span className="text-neutral-50 text-xs font-semibold font-poppins leading-7 md:text-[1.1rem]">Submit</span>
                 </button>
               </div> 
           </div>
