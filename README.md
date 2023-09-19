@@ -20,4 +20,4 @@ important things in life.
 <li>Have a "confirm password" input box on the sign up page</li>
 
 <br>
-Link: https://reminder-me.onrender.com/Landing
+Link: https://reminder-me.onrender.com
