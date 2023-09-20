@@ -1,15 +1,16 @@
 import React, { Fragment, useContext } from "react";
 import { AuthContext } from "./Auth.js";
+import Home from "./Home.js";
 import LandingPage from "./LandingPage";
 import Navbar from "./Navbar.js";
 
-const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
+const PrivateRoute = () => {
   const { currUser } = useContext(AuthContext);
   return (
     currUser ? (
       <Fragment>
         <Navbar tabs={["Logout"]} />
-        <RouteComponent {...routeProps} />
+         <Home/>
       </Fragment>
     ) : (
         <Fragment>

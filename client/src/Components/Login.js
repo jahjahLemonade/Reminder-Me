@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react'
-import { Redirect } from 'react-router'
+import { Navigate} from 'react-router'
 import firebase from './firebase.js'
 import { AuthContext } from "./Auth.js"
 import { Footer } from './Footer.js'
@@ -7,27 +7,30 @@ import email from "../assets/email1.svg"
 import pw from "../assets/Vector.svg"
 import login from "../assets/Login.png"
 import eye from "../assets/eye-slash.svg"
+import { Router } from 'react-router-dom'
 
 
-const Login = ({ history }) => {
+const Login = () => {
     const [type, setType] = useState("password")
+    // const history =  useHistory()
     const handleLogin = useCallback(async event => {
         event.preventDefault()
-        const { login_email, login_password } = event.target.elements
+        const userEmail = event.target.elements[0].value
+        const password = event.target.elements[1].value
         try {
-            await firebase.auth().signInWithEmailAndPassword(login_email.value, login_password.value)
-            history.push("/")
+            await firebase.auth().signInWithEmailAndPassword(userEmail, password)
+            // history.push("/")
         } catch (err) {
             alert(err)
         }
-    }, [history])
+    }, [])
 
     const handlePw = () => {
         setType(t => t === "password" ? "text" : "password")
     }
 
     const { currUser } = useContext(AuthContext)
-    if (currUser) return <Redirect to="/" />
+    if (currUser) return <Navigate to="/" />
 
     return (
         <div>
