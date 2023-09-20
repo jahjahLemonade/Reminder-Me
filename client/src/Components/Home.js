@@ -4,6 +4,13 @@ import Navbar from "./Navbar";
 import firebase from "firebase";
 import { AuthContext } from "./Auth.js";
 import axios from 'axios'
+import { Footer } from "./Footer";
+import name from "../assets/name.svg"
+import phone from "../assets/phone.svg"
+import msg from "../assets/msg.svg"
+import date from "../assets/date.svg"
+import timing from "../assets/timing.svg"
+import timezone from "../assets/timezone.svg"
 
 const Home = () => {
   // const [reminderList, setReminderList] = useState([]);
@@ -37,7 +44,7 @@ const Home = () => {
       document.getElementById("home").reset();
     }
   };
- 
+
   const handleClick = (e) => {
     // const id = e.target.parentElement.getAttribute("id");
     console.log("Out of Order")
@@ -48,111 +55,111 @@ const Home = () => {
     // }
   })
 
-
   return (
     <div>
-      <Navbar tabs={["UserInfo", "Logout"]} />
-      <div className="home-page">
-        <form id="home" className="col s12" onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="input-field col s2">
-              <input
-                id="first_name"
-                type="text"
-                className="validate"
-                required
-              />
-              <label id="first_name" htmlFor="first_name">
-                First Name
-              </label>
+      <div className="px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
+        <form className="flex flex-col lg:flex-row  justify-center lg:justify-around bg-[#fff] mt-8 md:mt-20 lg:pt-24 lg:pb-16 rounded-xl" onSubmit={handleSubmit}>
+          <div className="w-full px-[0.6rem] | lg:max-w-[32rem] lg:flex lg:flex-col lg:justify-center">
+            <div>
+              <p className="text-[1.25rem] font-semibold mb-[2.62rem] | md:text-[1.75rem] | lg:text-[2rem]">Add Reminder</p>
+              <div>
+                <label htmlFor="first_name">First Name</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
+                  <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="last_name">Last Name</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
+                  <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="contact_number">Cotact</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-8 pr-[0.7rem]" src={phone} />
+                  <input type="number" autoComplete="on" placeholder={`Enter Phone number`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="date">Date</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-8 pr-[0.7rem]" src={date} />
+                  <input type="text" className="datepicker" autoComplete="on" placeholder={`Select date`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="time">Time</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-8 pr-[0.7rem]" src={timing} />
+                  <input type="text" className="timepicker" autoComplete="on" placeholder={`Select time`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="timezone">Time Zone</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-8 pr-[0.7rem]" src={timezone} />
+                  <input autoComplete="on" placeholder={`Select time zone`} required />
+                </div>
+              </div>
+              <div className="mt-8 mb-[1.25rem]">
+                <label htmlFor="signup_password">Message</label>
+                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                  <img className="w-8 pr-[0.7rem]" src={msg} />
+                  <input type="text" autoComplete="on" placeholder={`Type here`} required />
+                </div>
+              </div>
             </div>
-            <div className="input-field col s2">
-              <input id="last_name" type="text" className="validate" required />
-              <label id="last_name" htmlFor="last_name">
-                Last Name
-              </label>
+            <div className="flex justify-center w-[11rem] h-[4rem] text-lg font-semibold text-[#fff] bg-gradient-to-r from-green-500 to-green-800 mx-auto mb-8 border border-[#fff] rounded-xl">
+              <button>Create</button>
             </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s2">
-              <input
-                id="phone_number"
-                type="text"
-                className="validate"
-                required
-              />
-              <label id="phone_number" htmlFor="phone_number">
-                Phone Number
-              </label>
-            </div>
-            <div className="input-field col s2">
-              <input id="date" type="text" className="datepicker" required />
-              <label id="date" htmlFor="date">
-                Date
-              </label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s2">
-              <input id="time" type="text" className="timepicker" required />
-              <label id="time" htmlFor="time">
-                Time
-              </label>
-            </div>
-            <div id="timezone" className="input-field col s2">
-              <select id="timezone" defaultValue="Choose Timezone..." required>
-                <option value="">Choose Timezone...</option>
-                <option value="US/Eastern">US/Eastern</option>
-                <option value="US/Central">US/Central</option>
-                <option value="US/Mountain">US/Mountain</option>
-                <option value="US/Pacific">US/Pacific</option>
-                <option value="US/Hawaii">US/Hawaii</option>
-                <option value="US/Alaska">US/Alaska</option>
-              </select>
-              <label id="timezone">Timezone</label>
-            </div>
-          </div>
-          <div id="freq" className="row">
-            <div className="input-field col s5">
-              <textarea
-                id="message"
-                className="materialize-textarea"
-                data-length="50"
-                required
-              ></textarea>
-              <label id="message" htmlFor="message">
-                Remind me to...
-              </label>
-            </div>
-          </div>
-          <div
-            className="create_button">
-            <button
-              id="create"
-              className="waves-effect waves-light btn-large"
-            >
-              Create
-            </button>
           </div>
         </form>
-        {/* comment out if you need to see the page without a reminder */}
-        <ul className="reminders">
-            <div className="scheduledReminder">
-              <button className="cross" onClick={handleClick}>
-                X
-              </button>
-              <li id="name">Receiver: {'Joe Brown'}</li>
-              <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
-              <br />
-              <li id="phoneNum">Phone #: {'123-456-7897'}</li>
-              <li id="tz">Receiver's TZ: {'Eastern'}</li>
-              <br />
-              <li id="dateCreated">Date Created: {'12/31/2099'}</li>
-              <li id="sms">Message: {'Hello World'}</li>
-            </div>
-        </ul>
       </div>
-    </div>
+      <Footer />
+      </div>
   );
 };
 export default Home;
+   {/* <div>
+            <select defaultValue="Choose Timezone..." required>
+              <option value="">Choose Timezone...</option>
+              <option value="US/Eastern">US/Eastern</option>
+              <option value="US/Central">US/Central</option>
+              <option value="US/Mountain">US/Mountain</option>
+              <option value="US/Pacific">US/Pacific</option>
+              <option value="US/Hawaii">US/Hawaii</option>
+              <option value="US/Alaska">US/Alaska</option>
+            </select>
+            <label>Timezone</label>
+          </div>
+        <div>
+          <div>
+            <textarea
+              className="materialize-textarea"
+              data-length="50"
+              required
+            ></textarea>
+            <label htmlFor="message">
+              Remind me to...
+              </label>
+          </div> */}
+      {/* comment out if you need to see the page without a reminder */}
+      {/* <ul>
+        <div className="w-full">
+          <button className="cross" onClick={handleClick}>
+            X
+              </button>
+          <li id="name">Receiver: {'Joe Brown'}</li>
+          <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
+          <br />
+          <li id="phoneNum">Phone #: {'123-456-7897'}</li>
+          <li id="tz">Receiver's TZ: {'Eastern'}</li>
+          <br />
+          <li id="dateCreated">Date Created: {'12/31/2099'}</li>
+          <li id="sms">Message: {'Hello World'}</li>
+        </div>
+      </ul>
+    </div> */}
