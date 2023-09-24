@@ -6,10 +6,10 @@ const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_KEY 
 );
-
+const nodemailer = require("nodemailer")
 const express = require("express");
 const app = express();
-app.use(express.urlencoded()); 
+app.use(express.urlencoded({ extended: true })); 
 app.use(express.json());
 app.use(cors())
 
@@ -106,6 +106,36 @@ app.post('/createMessage', (req, res) => {
   } catch (err) {
     console.error("Error: ",err)
   }
+});
+
+// Configure nodemailer to send emails
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: process.env.GMAIL_EMAIL,
+    pass: process.env.GMAIL_PASSWORD,
+  },
+});
+
+app.post('/sendEmail', (req, res) => {
+  const { email, name, message } = req.body;
+
+  const mailOptions = {
+    from: process.env.GMAIL_EMAIL,
+    to: process.env.GMAIL_EMAIL,
+    subject: 'Contact Form Submission',
+    text: `Email: ${email}\nName: ${name}\nMessage: ${message}`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.send('Email sent successfully');
+    }
+  });
 });
 
 app.use(express.static(path.join(__dirname, "build")));

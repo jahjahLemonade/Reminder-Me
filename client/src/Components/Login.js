@@ -7,7 +7,6 @@ import email from "../assets/email1.svg"
 import pw from "../assets/Vector.svg"
 import login from "../assets/Login.png"
 import eye from "../assets/eye-slash.svg"
-import { Router } from 'react-router-dom'
 
 
 const Login = () => {

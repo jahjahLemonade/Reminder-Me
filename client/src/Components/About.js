@@ -45,7 +45,7 @@ const About = () => {
               <span className="text-lg md:text-2xl font-[500]">Back-End:</span> <p>Node.js, Firebase, Twilio API</p>
             </p>
           </div>
-          <br />
+          {/* <br />
           <p className="text-lg md:text-2xl font-[500]">
             Link to repo:
           <a
@@ -56,7 +56,7 @@ const About = () => {
             >
               <i className="fa fa-github" style={{ fontSize: "3rem" }}></i>
             </a>
-          </p>
+          </p> */}
           </div>
           </div>
       </div>

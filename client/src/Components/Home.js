@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import "../CSS/Home.css";
-import Navbar from "./Navbar";
 import firebase from "firebase";
 import { AuthContext } from "./Auth.js";
 import axios from 'axios'
@@ -14,6 +13,7 @@ import timezone from "../assets/timezone.svg"
 
 const Home = () => {
   // const [reminderList, setReminderList] = useState([]);
+  const formRef = useRef()
   const { currUser } = useContext(AuthContext);
   //---> Add form fields into states
 
@@ -41,7 +41,7 @@ const Home = () => {
     } catch (error) {
       console.error("Error: ", error)
     } finally {
-      document.getElementById("home").reset();
+      formRef.current.reset()
     }
   };
 
@@ -57,56 +57,72 @@ const Home = () => {
 
   return (
     <div>
-      <div className="px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
-        <form className="flex flex-col lg:flex-row  justify-center lg:justify-around bg-[#fff] mt-8 md:mt-20 lg:pt-24 lg:pb-16 rounded-xl" onSubmit={handleSubmit}>
+      <div className="flex flex-col border-4 border-red-800 px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] | lg:px-[1.25rem] | xl:px-[9.75rem]">
+        <div className="border-4 border-purple-500 bg-[#fff] flex flex-col mt-8 | md:mt-20 | lg:flex-row | xl:justify-center ">
+        <form ref={formRef} className="border-4 border-yellow-500 flex flex-col w-full justify-center rounded-xl | lg:pt-20 lg:pb-16 lg:flex-row lg:justify-around | xl:max-w-[35rem]" onSubmit={handleSubmit}>
           <div className="w-full px-[0.6rem] | lg:max-w-[32rem] lg:flex lg:flex-col lg:justify-center">
             <div>
-              <p className="text-[1.25rem] font-semibold mb-[2.62rem] | md:text-[1.75rem] | lg:text-[2rem]">Add Reminder</p>
-              <div>
-                <label htmlFor="first_name">First Name</label>
-                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
-                  <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
-                  <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+              <p className="text-[1.25rem] font-semibold mb-[2.2rem] | md:text-[1.75rem] | lg:text-[2rem] lg:mt-0">Add Reminder</p>
+              <div className="lg:flex lg:flex-row | lg:justify-between">
+                <div>
+                  <label htmlFor="first_name">First Name</label>
+                  <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                    <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
+                    <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+                  </div>
+                </div>
+                <div className="mt-8 mb-[1.25rem] | lg:mt-0">
+                  <label htmlFor="last_name">Last Name</label>
+                  <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                    <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
+                    <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+                  </div>
                 </div>
               </div>
-              <div className="mt-8 mb-[1.25rem]">
-                <label htmlFor="last_name">Last Name</label>
-                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
-                  <img className="w-[2.2rem] pr-[0.7rem]" src={name} />
-                  <input type='text' autoComplete="on" placeholder={`Enter first name`} required />
+              <div className="lg:flex lg:flex-row | lg:justify-between">
+                <div className="mt-8 mb-[1.25rem] | lg:mt-0">
+                  <label htmlFor="contact_number">Contact</label>
+                  <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                    <img className="w-8 pr-[0.7rem]" src={phone} />
+                    <input type="number" autoComplete="on" placeholder={`Enter Phone number`} required />
+                  </div>
+                </div>
+                <div className="mt-8 mb-[1.25rem] | lg:mt-0">
+                  <label htmlFor="date">Date</label>
+                  <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                    <img className="w-8 pr-[0.7rem]" src={date} />
+                    <input type="text" className="datepicker" autoComplete="on" placeholder={`Select date`} required />
+                  </div>
                 </div>
               </div>
-              <div className="mt-8 mb-[1.25rem]">
-                <label htmlFor="contact_number">Cotact</label>
-                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
-                  <img className="w-8 pr-[0.7rem]" src={phone} />
-                  <input type="number" autoComplete="on" placeholder={`Enter Phone number`} required />
-                </div>
-              </div>
-              <div className="mt-8 mb-[1.25rem]">
-                <label htmlFor="date">Date</label>
-                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
-                  <img className="w-8 pr-[0.7rem]" src={date} />
-                  <input type="text" className="datepicker" autoComplete="on" placeholder={`Select date`} required />
-                </div>
-              </div>
-              <div className="mt-8 mb-[1.25rem]">
+              <div className="lg:flex lg:flex-row | lg:justify-between">
+              <div className="mt-8 mb-[1.25rem] | lg:mt-0">
                 <label htmlFor="time">Time</label>
                 <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
                   <img className="w-8 pr-[0.7rem]" src={timing} />
                   <input type="text" className="timepicker" autoComplete="on" placeholder={`Select time`} required />
                 </div>
               </div>
-              <div className="mt-8 mb-[1.25rem]">
+              <div className="mt-8 mb-[1.25rem] | lg:mt-0">
                 <label htmlFor="timezone">Time Zone</label>
                 <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
                   <img className="w-8 pr-[0.7rem]" src={timezone} />
-                  <input autoComplete="on" placeholder={`Select time zone`} required />
+                  {/* <input autoComplete="on" placeholder={`Select time zone`} required /> */}
+                  <select defaultValue="Choose Timezone..." required>
+                    <option value="">Choose Timezone...</option>
+                    <option value="US/Eastern">US/Eastern</option>
+                    <option value="US/Central">US/Central</option>
+                    <option value="US/Mountain">US/Mountain</option>
+                    <option value="US/Pacific">US/Pacific</option>
+                    <option value="US/Hawaii">US/Hawaii</option>
+                    <option value="US/Alaska">US/Alaska</option>
+                  </select>
                 </div>
               </div>
-              <div className="mt-8 mb-[1.25rem]">
+              </div>
+              <div className="mt-8 mb-[1.25rem] | lg:mt-0">
                 <label htmlFor="signup_password">Message</label>
-                <div className="flex w-full h-[5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
+                <div className="flex w-full h-[7.5rem] py-4 px-[0.5rem] border border-[#EAEBF6] rounded-lg">
                   <img className="w-8 pr-[0.7rem]" src={msg} />
                   <input type="text" autoComplete="on" placeholder={`Type here`} required />
                 </div>
@@ -117,13 +133,38 @@ const Home = () => {
             </div>
           </div>
         </form>
+        <div className="flex flex-col border border-red-300 w-full mt-[1.25rem] items-center | lg:mt-20 lg:max-w-[35rem] | xl:ml-24">
+          <div className="border border-blue-300 w-full max-w-[30rem] flex flex-col justify-around px-4 h-[13rem] bg-white shawdow-[-2.57px 2.57px 0px 0px #FFF inset] rounded-lg mb-[1.25rem]">
+            <button className="cross ml-auto" onClick={handleClick}>
+              X
+              </button>
+            <li id="name">Receiver: {'Joe Brown'}</li>
+            <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
+            <li id="phoneNum">Phone #: {'123-456-7897'}</li>
+            <li id="tz">Receiver's TZ: {'Eastern'}</li>
+            <li id="dateCreated">Date Created: {'12/31/2099'}</li>
+            <li id="sms">Message: {'Hello World'}</li>
+          </div>
+          <div className="border border-blue-300 w-full max-w-[30rem] md:max-w-[30rem] mb-[1.25rem] flex flex-col justify-around px-4 h-[13rem] bg-white shawdow-[-2.57px 2.57px 0px 0px #FFF inset] rounded-lg">
+            <button className="cross ml-auto" onClick={handleClick}>
+              X
+              </button>
+            <li id="name">Receiver: {'Joe Brown'}</li>
+            <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
+            <li id="phoneNum">Phone #: {'123-456-7897'}</li>
+            <li id="tz">Receiver's TZ: {'Eastern'}</li>
+            <li id="dateCreated">Date Created: {'12/31/2099'}</li>
+            <li id="sms">Message: {'Hello World'}</li>
+          </div>
+        </div>
+      </div>
       </div>
       <Footer />
-      </div>
+    </div>
   );
 };
 export default Home;
-   {/* <div>
+{/* <div>
             <select defaultValue="Choose Timezone..." required>
               <option value="">Choose Timezone...</option>
               <option value="US/Eastern">US/Eastern</option>
@@ -146,20 +187,3 @@ export default Home;
               Remind me to...
               </label>
           </div> */}
-      {/* comment out if you need to see the page without a reminder */}
-      {/* <ul>
-        <div className="w-full">
-          <button className="cross" onClick={handleClick}>
-            X
-              </button>
-          <li id="name">Receiver: {'Joe Brown'}</li>
-          <li id="arrivalTime">Arrival Time: {'12:00AM'}</li>
-          <br />
-          <li id="phoneNum">Phone #: {'123-456-7897'}</li>
-          <li id="tz">Receiver's TZ: {'Eastern'}</li>
-          <br />
-          <li id="dateCreated">Date Created: {'12/31/2099'}</li>
-          <li id="sms">Message: {'Hello World'}</li>
-        </div>
-      </ul>
-    </div> */}
