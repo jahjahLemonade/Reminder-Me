@@ -68,14 +68,25 @@ const Navbar = ({ tabs }) => {
           </ul>
         </div>
       </nav>
-      <ul className="sidenav" id="mobile-links">
+      <ul className="sidenav sidenav-close pt-[3.5rem]" id="mobile-links">
+            {[["Home", "/"],
+            ["About", "/About"],
+            ["Contact", "/Contact"]].map(([text, url]) => (
+              <li key={text}>
+              <Link
+                className={`border border-green-300`}
+                to={url}
+              >
+                {text}
+              </Link>
+            </li>))}
         {tabs.map((e) =>
           currUser ? (
             <li key={e} onClick={handleLogout}>
               <Link
                 value={e}
-                className={e}
-                to={e === "Logout" ? "/Signup" : "/"}
+                className={`${e} border border-green-300`}
+                to={e === "Logout" ? "/Login" : "/"}
               >
                 {e}
               </Link>
@@ -84,7 +95,7 @@ const Navbar = ({ tabs }) => {
               <li key={e} className={e}>
                 <Link
                   value={e}
-                  className={e}
+                  className={`${e} border border-green-300`}
                   to={
                     e === "Login"
                       ? "/Login"

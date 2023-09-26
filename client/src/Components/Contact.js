@@ -1,11 +1,18 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useCallback, useRef, useContext } from 'react'
+import { AuthContext } from "./Auth";
 import { Footer } from './Footer.js'
 import contact from "../assets/contact.png"
 import emailIcon from "../assets/email1.svg"
 import nameIcon from "../assets/name.svg"
 import msg from "../assets/msg.svg"
+import Navbar from './Navbar';
 
 const Contact = () => {
+  const { currUser } = useContext(AuthContext);
+  let contactPageTabs = ["Logout"];
+  if (!currUser) {
+    contactPageTabs = ["Sign Up", "Login"];
+  }
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
@@ -33,6 +40,7 @@ const Contact = () => {
 
   return (
     <div>
+        <Navbar tabs={contactPageTabs} />
         <div className="px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
             <form ref={formRef} className="flex flex-col lg:flex-row  justify-center lg:justify-around bg-[#fff] mt-8 md:mt-20 lg:pt-24 lg:pb-16 rounded-xl" onSubmit={handleSubmit}>
                 <div className="flex justify-center | lg:py-16 lg:order-last"><img className="w-full sm:max-w-[45rem]" src={contact} /></div>

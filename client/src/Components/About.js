@@ -2,16 +2,18 @@ import React, { useContext } from "react";
 import { AuthContext } from "./Auth";
 import about from "../assets/about.png";
 import { Footer } from "./Footer";
+import Navbar from "./Navbar";
 
 
 const About = () => {
   const { currUser } = useContext(AuthContext);
-  let aboutPageTabs = ["Home", "Logout"];
+  let aboutPageTabs = ["Logout"];
   if (!currUser) {
     aboutPageTabs = ["Sign Up", "Login"];
   }
   return (
     <div>
+      <Navbar tabs={aboutPageTabs}/>
       <div className="flex flex-col justify-center lg:flex-row lg:items-center  px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
         <div className="flex flex-col lg:flex-row lg:mt-24">
         <div className="lg:order-last lg:flex lg:max-xl:items-center lg:pb-16"><img className="shrink-0 w-full md:h-[33rem] lg:h-[25rem] xl:h-[35rem]" src={about} /></div>

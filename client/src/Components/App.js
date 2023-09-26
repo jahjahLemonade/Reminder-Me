@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Updated imports
 import Navbar from "./Navbar";
 import SignUpForm from "./SignUpForm";
@@ -8,6 +8,7 @@ import Home from "./Home";
 import { AuthProvider} from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "./Contact";
+
 
 const App = () => {
   return (
@@ -25,7 +26,6 @@ const App = () => {
               path="/About"
               element={ // Updated: Use element prop
                 <Fragment>
-                  <Navbar tabs={["Login", "Sign Up"]} />
                   <About />
                 </Fragment>
               }
@@ -34,7 +34,6 @@ const App = () => {
               path="/Contact"
               element={ // Updated: Use element prop
                 <Fragment>
-                  <Navbar tabs={["Login", "Sign Up"]} />
                   <Contact />
                 </Fragment>
               }
