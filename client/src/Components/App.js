@@ -14,7 +14,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Router> {/* Updated: Use Router instead of BrowserRouter */}
-        <div className="bg-[#DDF3DE]">
+        <div className="bg-[#DDF3DE] font-Poppins">
           <Routes> {/* Updated: Use Routes instead of Route */}
             <Route
             path="/" 

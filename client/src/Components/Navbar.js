@@ -17,8 +17,8 @@ const Navbar = ({ tabs }) => {
   };
   useEffect(() => {
     M.AutoInit()
-    let input = document.getElementById("message");
-    M.CharacterCounter.init(input);
+    // let input = document.getElementById("message");
+    // M.CharacterCounter.init(input);
 
   }, []);
   return (
@@ -37,13 +37,13 @@ const Navbar = ({ tabs }) => {
                 className={({ isActive }) => isActive ? activeLink : normalLink}>{text}</NavLink>
             ))}
           </div>
-          <ul className="right hide-on-med-and-down">
+          <div className="lg:flex right hide-on-med-and-down">
             {tabs.map((e) =>
               currUser ? (
                 <li key={e} onClick={handleLogout}>
                   <Link
                     value={e}
-                    className={e}
+                    className={`${e} flex justify-center items-center w-[8rem] h-[3rem] text-[1rem] font-bold text-[#fff] xl:m-4 lg:m-[0.5rem] bg-gradient-to-r from-green-500 to-green-800 border-2 border-[#fff] rounded-lg`}
                     to={e === "Logout" ? "/Signup" : "/"}
                   >
                     {e}
@@ -52,8 +52,8 @@ const Navbar = ({ tabs }) => {
               ) : (
                   <Link
                     value={e}
-                    className="flex justify-center items-center w-[8rem] h-[3rem] text-[1rem] font-bold text-[#fff] bg-gradient-to-r from-green-500 to-green-800 border-2 border-[#fff] rounded-lg"
-                    to={
+                    className="flex justify-center items-center w-[8rem] h-[3rem] text-[1rem] font-bold text-[#fff] xl:m-4 lg:m-[0.5rem] bg-gradient-to-r from-green-500 to-green-800 border-2 border-[#fff] rounded-lg"
+                    to={ 
                       e === "Login"
                         ? "/Login"
                         : e === "Sign Up"
@@ -65,7 +65,7 @@ const Navbar = ({ tabs }) => {
                   </Link>
                 )
             )}
-          </ul>
+          </div>
         </div>
       </nav>
       <ul className="sidenav sidenav-close pt-[3.5rem]" id="mobile-links">

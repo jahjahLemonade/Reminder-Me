@@ -14,8 +14,8 @@ const About = () => {
   return (
     <div>
       <Navbar tabs={aboutPageTabs}/>
-      <div className="flex flex-col justify-center lg:flex-row lg:items-center  px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
-        <div className="flex flex-col lg:flex-row lg:mt-24">
+      <div className="flex flex-col justify-center lg:flex-row lg:items-center  px-[1.25rem] mb-48 lg:mb-32 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
+        <div className="flex flex-col lg:flex-row lg:mt-32">
         <div className="lg:order-last lg:flex lg:max-xl:items-center lg:pb-16"><img className="shrink-0 w-full md:h-[33rem] lg:h-[25rem] xl:h-[35rem]" src={about} /></div>
         <div>
         <div className="font-poppins text-2xl md:text-5xl xl:text-[4rem] font-bold"><p>About This <span className="block text-[#2F8331]">Application</span></p></div>
