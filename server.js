@@ -32,7 +32,7 @@ function convertToUTC(inputDate, inputTime, inputTimezone) {
   // Define a mapping of timezone options to their respective offsets in minutes
   const timezoneOffsets = {
     "US/Eastern": -300, // UTC-5
-    "US/Central": -360, // UTC-6
+    "US/Central": -420, // UTC-6
     "US/Mountain": -420, // UTC-7
     "US/Pacific": -480, // UTC-8
     "US/Hawaii": -600, // UTC-10
@@ -108,7 +108,8 @@ app.post('/createMessage', (req, res) => {
           //   console.error("Error deleting document:", error);
           // }
         }
-      ).done();
+      ).catch((err) => console.error("Error:", err))
+      .done();
     }
     fetchData();
     // Send a response back to the frontend
