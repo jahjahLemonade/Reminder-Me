@@ -69,11 +69,13 @@ const Home = () => {
         message: message.current.value,
         timezone: timezonee.current.value,
         ID: ID
-      }).then((res) => res.ok ? alert('Email sent successfully') : alert('Error sending email'))
+      })
     } catch (error) {
+      alert('Error sending reminder')
       console.error("Error: ", error)
     } finally {
       formRef.current.reset()
+      alert('Reminder sent successfully')
     };
   }
 
