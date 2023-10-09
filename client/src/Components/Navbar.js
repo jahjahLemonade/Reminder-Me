@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { auth } from "firebase/app";
+import {auth, signOut} from './firebase.js'
 import { AuthContext } from "./Auth.js";
 import logo from "../assets/logo.svg";
 
@@ -12,13 +12,13 @@ const Navbar = ({ tabs }) => {
   const { currUser } = useContext(AuthContext);
   const handleLogout = async (e) => {
     if (e.target.innerText === "Logout") {
-      await auth().signOut();
+      await signOut(auth);
     }
   };
   useEffect(() => {
     M.AutoInit()
-    // let input = document.getElementById("message");
-    // M.CharacterCounter.init(input);
+  //   // let input = document.getElementById("message");
+  //   // M.CharacterCounter.init(input);
 
   }, []);
   return (

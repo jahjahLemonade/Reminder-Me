@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useContext } from 'react'
-import { Redirect } from 'react-router'
-import firebase from './firebase.js'
-import { AuthContext } from "./Auth.js"
+// import { Redirect } from 'react-router'
+import {auth, createUserWithEmailAndPassword} from './firebase.js'
+// import { AuthContext } from "./Auth.js"
 import { Footer } from './Footer.js'
 import email from "../assets/email1.svg"
 import pw from "../assets/Vector.svg"
@@ -17,9 +17,7 @@ const SignUpForm = ({ history }) => {
       event.preventDefault();
       const { signup_email, signup_password } = event.target.elements;
       try {
-        await firebase
-          .auth()
-          .createUserWithEmailAndPassword(signup_email.value, signup_password.value);
+        await createUserWithEmailAndPassword(auth, signup_email.value, signup_password.value);
         history.push("/")
       } catch (err) {
         alert(err);

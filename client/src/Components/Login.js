@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useContext } from 'react'
 import { Navigate} from 'react-router'
-import firebase from './firebase.js'
+import {auth, signInWithEmailAndPassword} from './firebase.js'
 import { AuthContext } from "./Auth.js"
 import { Footer } from './Footer.js'
 import email from "../assets/email1.svg"
@@ -17,7 +17,7 @@ const Login = () => {
         const userEmail = event.target.elements[0].value
         const password = event.target.elements[1].value
         try {
-            await firebase.auth().signInWithEmailAndPassword(userEmail, password)
+            await signInWithEmailAndPassword(auth, userEmail, password)
             // history.push("/")
         } catch (err) {
             alert(err)

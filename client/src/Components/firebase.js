@@ -1,6 +1,6 @@
-import * as firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
+import {initializeApp} from 'firebase/app'
+import {getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {getFirestore, collection, addDoc} from 'firebase/firestore'
 import env from 'react-dotenv'
 
 var config = {
@@ -13,6 +13,18 @@ var config = {
     appId: "1:830815988398:web:597257d987ea63668a9b3f",
     measurementId: "G-T600ZD0201"
 }
-firebase.initializeApp(config)
+const fb = initializeApp(config)
+const auth = getAuth(fb)
+const db = getFirestore(fb)
 
-export default firebase
+export {
+    signOut, 
+    auth, 
+    db, 
+    collection, 
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    addDoc
+}
+    
