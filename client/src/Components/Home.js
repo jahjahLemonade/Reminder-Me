@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import "../CSS/Home.css";
 import { db, collection, addDoc } from "./firebase";
 import { AuthContext } from "./Auth.js";
-import nextId, {setPrefix} from "react-id-generator"
+import nextId, { setPrefix } from "react-id-generator"
 import axios from 'axios'
 import { Footer } from "./Footer";
 import name from "../assets/name.svg"
@@ -69,7 +69,7 @@ const Home = () => {
         message: message.current.value,
         timezone: timezonee.current.value,
         ID: ID
-      })
+      }).then((res) => res.ok ? alert('Email sent successfully') : alert('Error sending email'))
     } catch (error) {
       console.error("Error: ", error)
     } finally {
@@ -86,14 +86,14 @@ const Home = () => {
   //     const data = query(collection("reminders"), where("userEmail", "==", currUser.email))
   //     setReminderList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   //   };
-    // fetchData();
-    // //delete removed
-    // const unsubscribe = collection("reminders").onSnapshot((snapshot) => {
-    //   const list = [];
-    //   snapshot.forEach((doc) => list.push({ ...doc.data(), id: doc.id }));
-    //   setReminderList(list);
-    // });
-    // return unsubscribe;
+  // fetchData();
+  // //delete removed
+  // const unsubscribe = collection("reminders").onSnapshot((snapshot) => {
+  //   const list = [];
+  //   snapshot.forEach((doc) => list.push({ ...doc.data(), id: doc.id }));
+  //   setReminderList(list);
+  // });
+  // return unsubscribe;
   // },[]);
 
   return (
@@ -176,7 +176,7 @@ const Home = () => {
           </form>
           <div className="flex flex-col w-full mt-[1.25rem] items-center | lg:mt-20 lg:max-w-[35rem] | xl:ml-24">
             <div className="w-full max-w-[30rem] flex flex-col justify-around px-4 h-[13rem] bg-white shawdow-[-2.57px 2.57px 0px 0px #FFF inset] rounded-lg mb-[1.25rem]">
-              <p>Reminders must be 15 mins ahead of current time and <br/> must be
+              <p>Reminders must be 15 mins ahead of current time and <br /> must be
               less than 7 days or reminder will go out immediately </p>
               {reminderList.map((e, i) => (
                 <div ref={ID} className="border border-blue-300" key={e.id}>
