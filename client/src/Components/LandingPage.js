@@ -15,7 +15,7 @@ const LandingPage = () => {
                     <div className="lg:order-last"><img className="w-full lg:max-w-[45rem]" src={lady} /><br /></div>
 
                     <div className="lg:flex lg:flex-col lg:justify-center">
-                        <div className="font-poppins text-2xl md:text-5xl xl:text-[4rem] font-semibold | md:max-w-[34rem]"><p>Don't Miss Out On The <span className="text-[#2F8331]">Important Things</span></p></div>
+                        <div className="font-Poppins text-2xl md:text-5xl xl:text-[4rem] font-semibold | md:max-w-[34rem]"><p>Don't Miss Out On The <span className="text-[#2F8331]">Important Things</span></p></div>
                         <br />
 
                         <div className="text-lg font-[300] | md:max-w-[34rem]">

@@ -2,18 +2,20 @@ import React, { useContext } from "react";
 import { AuthContext } from "./Auth";
 import about from "../assets/about.png";
 import { Footer } from "./Footer";
+import Navbar from "./Navbar";
 
 
 const About = () => {
   const { currUser } = useContext(AuthContext);
-  let aboutPageTabs = ["Home", "Logout"];
+  let aboutPageTabs = ["Logout"];
   if (!currUser) {
     aboutPageTabs = ["Sign Up", "Login"];
   }
   return (
     <div>
-      <div className="flex flex-col justify-center lg:flex-row lg:items-center  px-[1.25rem] mb-48 lg:mb-24 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
-        <div className="flex flex-col lg:flex-row lg:mt-24">
+      <Navbar tabs={aboutPageTabs}/>
+      <div className="flex flex-col justify-center lg:flex-row lg:items-center  px-[1.25rem] mb-48 lg:mb-32 md:px-[4.125rem] lg:px-[1.25rem] xl:px-[9.75rem]">
+        <div className="flex flex-col lg:flex-row lg:mt-32">
         <div className="lg:order-last lg:flex lg:max-xl:items-center lg:pb-16"><img className="shrink-0 w-full md:h-[33rem] lg:h-[25rem] xl:h-[35rem]" src={about} /></div>
         <div>
         <div className="font-poppins text-2xl md:text-5xl xl:text-[4rem] font-bold"><p>About This <span className="block text-[#2F8331]">Application</span></p></div>
@@ -45,7 +47,7 @@ const About = () => {
               <span className="text-lg md:text-2xl font-[500]">Back-End:</span> <p>Node.js, Firebase, Twilio API</p>
             </p>
           </div>
-          <br />
+          {/* <br />
           <p className="text-lg md:text-2xl font-[500]">
             Link to repo:
           <a
@@ -56,7 +58,7 @@ const About = () => {
             >
               <i className="fa fa-github" style={{ fontSize: "3rem" }}></i>
             </a>
-          </p>
+          </p> */}
           </div>
           </div>
       </div>
