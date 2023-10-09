@@ -56,7 +56,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="flex justify-center w-[11rem] h-[4rem] text-lg font-semibold text-[#fff] bg-gradient-to-r from-green-500 to-green-800 mx-auto mb-8 border border-[#fff] rounded-xl">
-                            <button>Login</button>
+                            <button className="w-full">Login</button>
                         </div>
                     </div>
 
