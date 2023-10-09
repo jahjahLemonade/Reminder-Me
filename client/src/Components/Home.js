@@ -61,7 +61,7 @@ const Home = () => {
       // })
 
       //Create Reminder
-      await axios.post('http://localhost:3001/createMessage', {
+      await axios.post('https://reminder-me-api.onrender.com/createMessage', {
         name: `${firstname.current.value} ${lastname.current.value}`,
         phoneNumber: number.current.value,
         date: date.current.value,
